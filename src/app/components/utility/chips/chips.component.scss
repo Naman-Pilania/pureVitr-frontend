@@ -1,0 +1,12 @@
+@import "../../../../mixins.scss";
+@import "../../../../variables";
+
+.chip {
+  // background-color: #f3f3f3 !important;
+  border: 2px solid map-get($colors, "gray-dark" ) !important;
+  // width: fit-content !important;
+  padding: 0.5rem 2rem !important;
+  // padding: 0.25rem 0.5rem !important;
+  font-size: map-get($font-sizes, "xs") !important;
+  @include border-radius(40px);
+}

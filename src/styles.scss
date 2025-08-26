@@ -1,1 +1,163 @@
-/* You can add global styles to this file, and also import other style files */
+@import "./variables";
+@import "./mixins";
+
+* {
+  box-sizing: border-box;
+}
+
+html, body { 
+  font-size: 16px;
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  color: map-get($colors, "black");
+  background-color: map-get($colors, "white");
+  font-weight: map-get($font-weights, "regular");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  line-height: 1.5 !important;
+}
+
+p,
+li,
+blockquote {
+  line-height: 1.6;
+}
+
+*:not(.material-icons, .fa-regular, .fa-solid) {
+  font-family: $font-family !important;
+}
+
+// Font weignt classes with breakpoints.
+@each $weight-name, $weight in $font-weights {
+  .fw-#{$weight} {
+    font-weight: $weight !important;
+  }
+
+  @each $breakpoint-name, $breakpoint in $breakpoints {
+    .text-#{$breakpoint-name}-#{$weight} {
+      @include breakpoint($breakpoint-name) {
+        font-weight: $weight !important;
+      }
+    }
+  }
+}
+
+
+// Text size classes with breakpoints.
+@each $size-name, $size in $font-sizes {
+  .text-#{$size-name} {
+    font-size: $size !important;
+  }
+
+  @each $breakpoint-name, $breakpoint in $breakpoints {
+    .text-#{$breakpoint-name}-#{$size-name} {
+      @include breakpoint($breakpoint-name) {
+        font-size: $size !important;
+      }
+    }
+  }
+}
+
+// Text color classes.
+@each $color-name, $color-code in $colors {
+  .bg-#{$color-name} {
+    background-color: $color-code !important;
+  }
+
+  .text-#{$color-name} {
+    color: $color-code !important;
+  }
+
+  @each $breakpoint-name, $breakpoint in $breakpoints {
+    .bg-#{$breakpoint-name}-#{$color-name} {
+      @include breakpoint($breakpoint-name) {
+        background-color: $color-code !important;
+      }
+    }
+
+    .text-#{$breakpoint-name}-#{$color-name} {
+      @include breakpoint($breakpoint-name) {
+        background-color: $color-code !important;
+      }
+    }
+  }
+}
+
+
+.btn {
+  border-radius: 8px !important;
+  &-primary {
+    @include button-style(primary);
+  }
+  &-reset {
+    @include button-style(reset);
+  }
+  &-bordered {
+    @include button-style(bordered);
+  }
+  &-bordered-black {
+    @include button-style(bordered-black);
+  }
+  &-bordered-gray {
+    @include button-style(bordered-gray);
+  }
+  &-disabled,
+  &:disabled {
+    @include button-style(disabled);
+  }
+  &-danger {
+    @include button-style(danger);
+  }
+  &-secondary {
+    @include button-style(secondary);
+  }
+  &-success {
+    @include button-style(success);
+  }
+  &-sm {
+    font-size: map-get($font-sizes, "sm");
+    padding: 4px 10px;
+    border-radius: 30px !important;
+  }
+  &-secondary-bordered {
+    @include button-style(secondary-bordered);
+  }
+  &-tertiary-bordered {
+    @include button-style(tertiary-bordered);
+  }
+  &-text {
+    @include button-style(text);
+  }
+  &-bordered-red {
+    @include button-style(bordered-red);
+  }
+}
+
+.text {
+  &__white {
+    color: map-get($colors, "white");
+  }
+  &__primary {
+    color: map-get($colors, "primary");
+  }
+  &__black {
+    color: map-get($colors, "black");
+  }
+  &__gray {
+    color: map-get($colors, "gray-dark");
+  }
+  &__light-gray {
+    color: map-get($colors, "background");
+  }
+  &__blue-gray {
+    color: map-get($colors, "blue-gray");
+  }
+}

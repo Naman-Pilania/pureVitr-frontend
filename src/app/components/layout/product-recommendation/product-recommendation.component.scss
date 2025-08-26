@@ -1,0 +1,23 @@
+@import "../../../../variables.scss";
+
+.announcement-carousel-arrows {
+  padding: 6px;
+  border-radius: 8px;
+  background-color: #dcd7ff;
+  border: none;
+  width: 40px;
+  height: 40px;
+}
+
+.announcement_updates {
+  color: map-get($colors, 'primary');
+}
+
+::ng-deep {
+  .announcement-swiper-pagination {
+    position: absolute;
+    bottom: -1.375rem !important;
+    height: 10px;
+    top: auto !important;
+  }
+}

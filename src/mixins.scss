@@ -1,0 +1,306 @@
+@import "./variables";
+
+@function is-important($important) {
+  @return #{if($important, "!important", "")};
+}
+
+@mixin breakpoint($breakpoint) {
+  @if $breakpoint == "sm" {
+    @media screen and (min-width: map-get($breakpoints, "sm")) {
+      @content;
+    }
+  } @else if $breakpoint == "md" {
+    @media screen and (min-width: map-get($breakpoints, "md")) {
+      @content;
+    }
+  } @else if $breakpoint == "lg" {
+    @media screen and (min-width: map-get($breakpoints, "lg")) {
+      @content;
+    }
+  } @else if $breakpoint == "xl" {
+    @media screen and (min-width: map-get($breakpoints, "xl")) {
+      @content;
+    }
+  }
+}
+
+@mixin box-shadow($type: null, $important: false) {
+  @if $type == "gray-light" {
+    box-shadow: 0 4px 0.5rem 0 rgba(0, 0, 0, 0.05) is-important($important);
+  } @else if $type== "form-control-danger" {
+    box-shadow: 0 0 0 0.25rem #fe380c2f;
+  } @else if($type == "form-control-gray") {
+    box-shadow: 0 0 0 0.25rem #e0e0e0;
+  } @else {
+    box-shadow: 0 4px 0.75rem 0 rgba(0, 0, 0, 0.15) is-important($important);
+  }
+}
+
+@keyframes loading {
+  to {
+    background-position-x: -20%;
+  }
+}
+
+@mixin skeleton-loader($background: rgba(255, 255, 255, 0.5)) {
+  background-color: $background !important;
+  background: linear-gradient(
+      100deg,
+      rgba(255, 255, 255, 0) 40%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0) 60%
+    )
+    rgba(255, 255, 255, 0.5);
+  background-size: 200% 100%;
+  background-position-x: 180%;
+  animation: 1.2s loading ease-in-out infinite;
+}
+
+@mixin button-style($button) {
+  font-size: map-get($font-sizes, "sm");
+  font-weight: map-get($font-weights, "regular");
+  border: 1px solid map-get($colors, "primary");
+  border-radius: 0.5rem;
+  text-align: center;
+  height: 40px;
+  padding: 0 1.25rem;
+  display: inline-block;
+  white-space: nowrap;
+  line-height: 1.25rem;
+  text-decoration: none;
+  transition: all ease-in-out 0.3s;
+  margin-bottom: 0;
+  &:hover {
+    transition: all ease-in-out 0.3s;
+  }
+  @if $button == primary {
+    background: map-get($colors, "primary");
+    color: map-get($colors, "white");
+    &:hover {
+      color: map-get($colors, "white");
+      background: darken($color: map-get($colors, "primary"), $amount: 10%);
+      border-color: darken($color: map-get($colors, "primary"), $amount: 10%);
+    }
+  } @else if $button == bordered {
+    background: none;
+    border: 1px solid map-get($colors, "primary" !important);
+    color: map-get($colors, "primary");
+    box-shadow: none;
+    &:hover {
+      border: 1px
+        solid
+        darken($color: map-get($colors, "primary"), $amount: 10%);
+        background: darken($color: map-get($colors, "white"), $amount: 10%);
+      color: darken($color: map-get($colors, "primary"), $amount: 10%);
+    }
+  } @else if $button == bordered-black {
+    background: none;
+    border: 1px solid map-get($colors, "black");
+    color: map-get($colors, "black");
+    box-shadow: none;
+    &:hover {
+      border: 1px solid darken($color: map-get($colors, "black"), $amount: 10%);
+      color: darken($color: map-get($colors, "black"), $amount: 10%);
+    }
+  } @else if $button == bordered-gray {
+    background: none;
+    border: 1px solid map-get($colors, "control-border-default");
+    color: map-get($colors, "background");
+    box-shadow: none;
+    &:hover {
+      border: 1px
+        solid
+        darken(
+          $color: map-get($colors, "control-border-default"),
+          $amount: 10%
+        );
+      color: darken($color: map-get($colors, "background"), $amount: 10%);
+    }
+  } @else if $button == success {
+    background: map-get($colors, "success");
+    border: 1px solid map-get($colors, "success");
+    color: map-get($colors, "white");
+    &:hover {
+      color: map-get($colors, "white");
+      background: darken($color: map-get($colors, "success"), $amount: 10%);
+      border-color: darken($color: map-get($colors, "success"), $amount: 10%);
+    }
+  } @else if $button == reset {
+    background: map-get($colors, "primary-light");
+    color: map-get($colors, "primary");
+    border: 1px solid map-get($colors, "primary-light");
+    box-shadow: none;
+    &:hover {
+      color: map-get($colors, "primary");
+      background: darken(
+        $color: map-get($colors, "primary-light"),
+        $amount: 10%
+      );
+      border-color: darken(
+        $color: map-get($colors, "primary-light"),
+        $amount: 10%
+      );
+    }
+  } @else if $button == disabled {
+    // background: map-get($colors, "gray-light");
+    // border: 1px solid map-get($colors, "gray-light");
+    // color: map-get($colors, "gray-light");
+    // box-shadow: none;
+    // &:hover {
+    color: map-get($colors, "white");
+    background: map-get($colors, "gray-dark");
+    border: 1px solid map-get($colors, "gray-dark") !important;
+    cursor: not-allowed !important;
+  } @else if $button == danger {
+    background: map-get($colors, "btn-color-cancel");
+    border: 1px solid map-get($colors, "btn-color-cancel");
+    color: map-get($colors, "white");
+    box-shadow: none;
+    &:hover {
+      color: map-get($colors, "white");
+      background: darken(
+        $color: map-get($colors, "btn-color-cancel"),
+        $amount: 10%
+      );
+      border-color: darken(
+        $color: map-get($colors, "btn-color-cancel"),
+        $amount: 10%
+      );
+      @include box-shadow();
+    }
+  } @else if $button == secondary {
+    background: map-get($colors, "black");
+    border: 1px solid map-get($colors, "black");
+    color: map-get($colors, "white");
+    box-shadow: none;
+    &:hover {
+      color: map-get($colors, "white");
+      background: darken($color: map-get($colors, "black"), $amount: 10%);
+      border-color: darken($color: map-get($colors, "black"), $amount: 10%);
+      @include box-shadow();
+    }
+  } @else if $button == secondary-bordered {
+    border: 1px solid map-get($colors, "black");
+    color: map-get($colors, "black");
+    box-shadow: none;
+    &:hover {
+      color: map-get($colors, "white");
+      background: darken($color: map-get($colors, "black"), $amount: 10%);
+      border-color: darken($color: map-get($colors, "black"), $amount: 10%);
+    }
+  } @else if $button == tertiary-bordered {
+    border: 1px solid map-get($colors, "black");
+    color: map-get($colors, "black");
+    box-shadow: none;
+    &:hover {
+      background: map-get($colors, "btn-hover-gray");
+      border: 1px solid map-get($colors, "black");
+      color: map-get($colors, "black");
+    }
+  } @else if $button == text {
+    border: none;
+    color: map-get($colors, "text-gray");
+    box-shadow: none;
+    &:hover {
+      background: none;
+      border: none;
+    }
+  } @else if $button == bordered-red {
+    background: map-get($colors, "white");
+    border: 1px solid map-get($colors, "btn-color-cancel");
+    color: map-get($colors, "btn-color-cancel");
+    box-shadow: none;
+    &:hover {
+      color: map-get($colors, "btn-color-cancel");
+      border-color: darken(
+        $color: map-get($colors, "btn-color-cancel"),
+        $amount: 10%
+      );
+    }
+  }
+}
+
+@mixin card-utility {
+  border: 1px solid map-get($colors, "gray-lightest");
+  border-radius: 1rem;
+  .card-heading {
+    .heading {
+      font-weight: map-get($font-weights, "bold");
+    }
+  }
+  .card-body {
+    label {
+      color: map-get($colors, "black");
+      font-weight: map-get($font-weights, "semibold");
+      font-size: map-get($font-sizes, "sm");
+    }
+    p {
+      color: map-get($colors, "gray-dark");
+      font-size: map-get($font-sizes, "sm");
+    }
+  }
+  .card-footer {
+    padding: 0;
+    background: none;
+    border: none;
+    column-gap: 0.625rem;
+  }
+}
+
+@mixin border-radius($radius: 4px) {
+  border-radius: $radius !important;
+}
+
+@mixin transition($duration: 0.5s) {
+  transition: all ease-in-out $duration;
+}
+
+@mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    border-radius: 10px;
+  }
+  &::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: map-get($colors, "primary-bg");
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: darken(map-get($colors, "primary-bg"), 15%);
+  }
+}
+
+@mixin rounded-gray-scrollbar {
+  &::-webkit-scrollbar {
+    width: 0.75rem;
+    height: 0.75rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: map-get($colors, "gray-lightest");
+    border-radius: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: map-get($colors, "gray");
+    border-radius: 0.5rem;
+    border: 3px solid map-get($colors, "gray-lightest");
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: darken(map-get($colors, "gray"), 20%);
+  }
+
+  &::-webkit-scrollbar-corner {
+    background: map-get($colors, "gray-lightest");
+  }
+}
+
+@mixin line-clamp($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

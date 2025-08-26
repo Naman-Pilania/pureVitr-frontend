@@ -1,0 +1,16 @@
+.card-container {
+  border: 2px solid #ccc;
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 1rem;
+  margin: 1rem 0;
+
+  .img-container {
+    display: flex;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    background-color: #f3f3f3;
+  }
+}
