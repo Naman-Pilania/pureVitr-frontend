@@ -1,0 +1,76 @@
+<div class="position-relative header-margin">
+  <button
+    class="d-flex align-items-center justify-content-center position-absolute hero-carousel-arrow hero-carousel-arrow-prev"
+  >
+    <img src="images/prev-arrow.svg" height="14" width="10" alt="prev arrow" />
+  </button>
+
+  <div class="hero-carousel-container">
+    <swiper-container
+      id="hero-swiper-container"
+      init="false"
+      #swiperContainerHeroCarousel
+    >
+      @for (banner of bannerList; track banner; let index = $index){
+      <swiper-slide (click)="onBannerClick(index)">
+        <ng-container
+          *ngTemplateOutlet="
+            swiperSlide;
+            context: {
+              isClickable: bannerList[index].isClickable,
+              webBanner: bannerList[index].imgUrl,
+              mobileBanner: bannerMobile[index].imgUrl,
+              tabletBanner: bannerTablet[index].imgUrl
+            }
+          "
+        ></ng-container>
+      </swiper-slide>
+      }
+    </swiper-container>
+  </div>
+
+  <button
+    class="d-flex align-items-center justify-content-center position-absolute hero-carousel-arrow hero-carousel-arrow-next"
+  >
+    <img width="10" height="14" src="images/next-arrow.svg" alt="Next" />
+  </button>
+
+  <ng-template
+    let-webBanner="webBanner"
+    let-mobileBanner="mobileBanner"
+    let-tabletBanner="tabletBanner"
+    let-isClickable="isClickable"
+    #swiperSlide
+  >
+    <div
+      class="hero-carousel position-relative"
+      [ngClass]="{ 'cursor-pointer': isClickable }"
+    >
+      <!-- Web Banner -->
+      <img
+        fetchpriority="high"
+        [src]="webBanner"
+        alt="Web Banner"
+        class="w-100 h-100 d-none d-lg-block"
+      />
+
+      <!-- Tablet Banner -->
+      <img
+        fetchpriority="high"
+        [src]="tabletBanner"
+        alt="Tablet Banner"
+        class="w-100 h-100 d-none d-md-block d-lg-none"
+      />
+
+      <!-- Mobile Banner -->
+      <img
+        fetchpriority="high"
+        [src]="mobileBanner"
+        alt="Mobile Banner"
+        class="w-100 h-100 d-block d-md-none"
+      />
+    </div>
+  </ng-template>
+
+  <div class="hero-swiper-pagination swiper-pagination"></div>
+</div>

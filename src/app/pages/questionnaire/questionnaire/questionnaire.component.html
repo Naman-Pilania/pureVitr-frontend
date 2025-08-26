@@ -1,11 +1,12 @@
 <section class="container">
-  <div
-    *ngFor="let section of sections; let i = index" 
-    class="my-4">
-    <h2 class="">Section {{ i + 1 }}</h2>
+  <ng-container *ngIf="isMobileView">
     <app-progress-bar></app-progress-bar>
-    <h3> {{sectionTitles[i]}} </h3>
-    <div *ngFor="let question of section; let i = index" class="mt-4">
+
+  </ng-container>
+  <ng-container *ngIf="!isMobileView">
+    <h2 class="">Section {{ currentSection + 1 }}</h2>
+    <h3> {{sectionTitles[currentSection]}} </h3>
+    <div *ngFor="let question of sections[currentSection]; let i = index" class="mt-4">
       <h4 class="text-muted">{{ question?.question }}</h4>
       <ul class="list-unstyled d-flex flex-wrap gap-3 flex-column flex-md-row mx-2">
         <li *ngFor="let option of question?.options" class="mb-2">
@@ -13,16 +14,16 @@
         </li>
       </ul>
     </div>
-  <div class="actions">
-    <button mat-icon-button >
-      <mat-icon>arrow_back</mat-icon>
-    </button>
-
-    <button mat-icon-button color="primary">
-      <mat-icon>check</mat-icon>
-      <mat-icon>arrow_forward</mat-icon>
-    </button>
-  </div>
-  </div>
-   <app-product-recommendation></app-product-recommendation>
+    <div class="actions">
+      <button mat-icon-button >
+        <mat-icon>arrow_back</mat-icon>
+      </button>
+  
+      <button (click)="handleNext()" mat-icon-button color="primary">
+        <!-- <mat-icon>check</mat-icon> -->
+        <mat-icon>arrow_forward</mat-icon>
+      </button>
+    </div>
+  </ng-container>
+   <!-- <app-product-recommendation></app-product-recommendation> -->
 </section>

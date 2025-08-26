@@ -1,0 +1,12 @@
+::ng-deep .mat-stepper-horizontal {
+  background-color: white !important;
+  }
+  
+  ::ng-deep .mat-step-header[aria-disabled='false'] {
+    cursor: pointer !important;
+  }
+  
+  ::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+  }
+  

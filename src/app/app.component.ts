@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ProgressBarComponent } from "./components/utility/progress-bar/progress-bar.component";
 import { QuestionnaireComponent } from "./pages/questionnaire/questionnaire/questionnaire.component";
-import { TopNavbarComponent } from './components/layout/top-navbar/top-navbar.component';
+import { TopNavbarComponent } from './components/navbar/top-navbar/top-navbar.component';
 
 @Component({
   selector: 'app-root',

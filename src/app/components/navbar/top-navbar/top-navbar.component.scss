@@ -3,12 +3,13 @@
 
 .navbar {
   height: 5rem; //80px
-  background-color: map-get($colors, "white");
+  // background-color: #F9F6F3;
+  background-color: #FFFDF6;
   z-index: 9;
   position: relative;
 
   @include breakpoint(lg) {
-    height: 4.5rem; //72px
+    // height: 4.5rem; //72px
   }
 
   .skeleton-loader {
@@ -123,7 +124,7 @@ ul > li {
       position: relative;
       @include transition(0.2s);
       @include breakpoint(lg) {
-        height: 4.5rem; //72px
+        // height: 4.5rem; //72px
         border-bottom: 3px solid transparent;
       }
       @media (max-width: map-get($breakpoints, "lg")) {
@@ -348,7 +349,7 @@ ul > li {
   // position: absolute;
   // left:0px;
   @include breakpoint(lg) {
-    height: 4.5rem;
+    // height: 4.5rem;
   }
 }
 .parichay {

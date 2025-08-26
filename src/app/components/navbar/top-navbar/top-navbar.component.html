@@ -1,0 +1,161 @@
+<div
+  class="w-100"
+  [ngClass]="{ 'overlay': isOpened }"
+  (click)="
+    isOpened = !isOpened; isOpened == false ? (showDropdownList = false) : true
+  "
+></div>
+<nav class="navbar p-0 d-flex flex-nowrap">
+  <div class="container">
+    <div class="mobile-menu w-100 gap-3">
+      <div class="d-flex align-items-center justify-content-end gap-3">
+        <div
+          class="toggle-menu align-items-center justify-content-center"
+          (click)="
+            isOpened = !isOpened;
+            isOpened == false ? (showDropdownList = false) : true
+          "
+        >
+          <img
+            fetchPriority="high"
+            src="images/toggle-menu.svg"
+            alt="AIKosh"
+            title="AIKosh"
+            height="32"
+            width="32"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="web-menu navbar-section d-flex align-items-center justify-content-center"
+      [ngClass]="{ opened: isOpened }"
+    >
+      <div class="navbar-section__left d-flex align-items-center">
+        <ul
+          class="navbar-section__menu d-flex justify-content-start p-0 m-0 w-100 w-md-auto"
+        >
+          <li
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <a
+              class="text-decoration-none"
+            >
+              All Products
+            </a
+            >
+          </li>
+          <li
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <a
+              class="text-decoration-none"
+            >
+              Newly Launched
+            </a
+            >
+          </li>
+          <li
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <a
+              class="text-decoration-none"
+            >
+              A2 Ghee
+            </a
+            >
+          </li>
+        <li
+          (click)="isOpened = false; showDropdownList = false"
+          class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+        >
+          <a
+            class="text-decoration-none"
+          >
+            Wood-Pressed Oils
+          </a
+          >
+        </li>
+        <li
+          (click)="isOpened = false; showDropdownList = false"
+          class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+        >
+          <a
+            class="text-decoration-none"
+          >
+            Shop
+          </a
+          >
+        </li>
+        <li
+          (click)="isOpened = false; showDropdownList = false"
+          class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+        >
+          <a
+            class="text-decoration-none"
+          >
+            Healthy Combo
+          </a
+          >
+        </li>
+          <li
+            (click)="onDropdownClick()"
+            class="d-flex has-child flex-column align-items-start align-items-lg-center justify-content-center position-relative"
+          >
+            <a
+              class="text-decoration-none fw-700"
+            >
+              Blogs
+            </a>
+            <ul
+              class="position-absolute navbar-section__dropdown p-0 m-0 overflow-hidden"
+              [ngClass]="showDropdownList ? 'd-block' : ''"
+            >
+              <li routerLinkActive="active-category">
+                <a
+                  class="text-decoration-none"
+                  routerLinkActive="active-link"
+                  href="https://www.mygov.in/task/logo-design-contest-ai-impact-summit/"
+                  target="_blank"
+                >
+                  A2 Ghee
+                </a>
+              </li>
+              <li
+                routerLinkActive="active-category"
+                (click)="isOpened = false; showDropdownList = false"
+                [routerLink]="['/', routes.stakeholderConsultation]"
+              >
+                <a class="text-decoration-none" routerLinkActive="active-link">
+                  Wood-Pressed Oils
+                </a>
+              </li>
+              <li routerLinkActive="active-category">
+                <a
+                  class="text-decoration-none"
+                  routerLinkActive="active-link"
+                  href="https://www.mygov.in/group-issue/public-consultation-help-shape-ai-impact-summit-2026/"
+                  target="_blank"
+                >
+                  Shop
+                </a>
+              </li>
+              <li
+                routerLinkActive="active-category"
+                (click)="isOpened = false; showDropdownList = false"
+              >
+                <a class="text-decoration-none" routerLinkActive="active-link">
+                  Healthy Combo
+                </a
+                >
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

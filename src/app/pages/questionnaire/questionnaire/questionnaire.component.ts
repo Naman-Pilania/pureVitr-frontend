@@ -7,6 +7,8 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from "../../../components/layout/footer/footer.component";
 import { ProductCardComponent } from "../../../components/layout/cards/product-card/product-card.component";
 import { ProductRecommendationComponent } from "../../../components/layout/product-recommendation/product-recommendation.component";
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { MatStepperModule } from '@angular/material/stepper';
 
 @Component({
   selector: 'app-questionnaire',
@@ -19,6 +21,7 @@ import { ProductRecommendationComponent } from "../../../components/layout/produ
     FooterComponent,
     ProductCardComponent,
     ProductRecommendationComponent,
+    MatStepperModule
 ],
   templateUrl: './questionnaire.component.html',
   styleUrl: './questionnaire.component.scss'
@@ -31,16 +34,31 @@ export class QuestionnaireComponent {
   allQuestions = this.sections.flat();
   totalQuestions = this.allQuestions.length;
   currentQuestion!: { question: string, options: string[] };
+  currentSection = 0;
 
   currentIndex = 0;
   answers: string[] = [];
+  isMobileView = false;
+
+  constructor(
+    private breakpointObserver: BreakpointObserver
+  ){}
 
   ngOnInit() {
     this.getQuestions();
+    this.breakpointObserver.observe([Breakpoints.Handset])
+    .subscribe(result => {
+      console.log("🚀 ~ QuestionnaireComponent ~ ngOnInit ~ result:", result)
+      this.isMobileView = result.matches;
+    });
   }
 
   getQuestions() {
     this.currentQuestion = this.allQuestions[this.currentIndex];
+  }
+
+  handleNext() {
+    this.currentSection++;
   }
 
 }

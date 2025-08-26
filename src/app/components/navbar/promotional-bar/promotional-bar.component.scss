@@ -1,0 +1,17 @@
+.promotional-bar {
+  background-color: #FBF3D5;
+  color: #BB6653;
+}
+
+.hidden {
+  opacity: 0;
+  display: none !important;
+  pointer-events: none;
+  transition: opacity 0.5s ease;
+}
+
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  pointer-events: auto;
+}
