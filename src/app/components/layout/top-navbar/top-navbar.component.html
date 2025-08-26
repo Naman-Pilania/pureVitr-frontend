@@ -1,11 +1,252 @@
-<header>
-  <nav>
-    <li>All Products</li>
-    <li>Newy Launched</li>
-    <li>A2 Ghee</li>
-    <li>Wood-Pressed Oils</li>
-    <li>Shop</li>
-    <li>Healthy Combo</li>
-    <li>Blogs</li>
-  </nav>
-</header>
+<div
+  class="w-100"
+  [ngClass]="{ 'overlay': isOpened }"
+  (click)="
+    isOpened = !isOpened; isOpened == false ? (showDropdownList = false) : true
+  "
+></div>
+<nav class="navbar p-0 d-flex flex-nowrap">
+  <div class="container">
+    <div class="mobile-menu w-100 gap-3">
+      <div class="d-flex align-items-center justify-content-end gap-3">
+        <div
+          class="toggle-menu align-items-center justify-content-center"
+          (click)="
+            isOpened = !isOpened;
+            isOpened == false ? (showDropdownList = false) : true
+          "
+        >
+          <img
+            fetchPriority="high"
+            src="images/toggle-menu.svg"
+            alt="AIKosh"
+            title="AIKosh"
+            height="32"
+            width="32"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      class="web-menu navbar-section d-flex align-items-center justify-content-center"
+      [ngClass]="{ opened: isOpened }"
+    >
+      <div class="navbar-section__left d-flex align-items-center">
+        <ul
+          class="navbar-section__menu d-flex justify-content-start p-0 m-0 w-100 w-md-auto"
+        >
+          <!--Home-->
+          <li
+            routerLinkActive="active-category"
+            [routerLinkActiveOptions]="{ exact: true }"
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <a
+              class="text-decoration-none"
+              routerLinkActive="active-link"
+              [routerLink]="['/', routes.home]"
+              [routerLinkActiveOptions]="{ exact: true }"
+              >Home</a
+            >
+            <span class="text-gray vi-hidden"> -TBA- </span>
+          </li>
+
+          <!--Participate-->
+          <li
+            routerLinkActive="active-category"
+            (click)="onDropdownClick()"
+            class="d-flex has-child flex-column align-items-start align-items-lg-center justify-content-center position-relative"
+          >
+            <a
+              class="text-decoration-none fw-700"
+              routerLinkActive="active-link"
+            >
+              <!-- [ngStyle]="{'color': '#ccc'}" -->
+              Participate
+            </a>
+            <span class="text-gray vi-hidden"> -TBA- </span>
+            <ul
+              class="position-absolute navbar-section__dropdown p-0 m-0 overflow-hidden"
+              [ngClass]="showDropdownList ? 'd-block' : ''"
+            >
+              <!-- [ngStyle]="showDropdown()" -->
+              <!-- (click)="isOpened = false; showDropdownList = false" -->
+              <li routerLinkActive="active-category">
+                <a
+                  class="text-decoration-none"
+                  routerLinkActive="active-link"
+                  href="https://www.mygov.in/task/logo-design-contest-ai-impact-summit/"
+                  target="_blank"
+                >
+                  Logo Design Contest
+                </a>
+              </li>
+              <li
+                routerLinkActive="active-category"
+                (click)="isOpened = false; showDropdownList = false"
+                [routerLink]="['/', routes.stakeholderConsultation]"
+              >
+                <a class="text-decoration-none" routerLinkActive="active-link">
+                  Stakeholder Consultation
+                </a>
+              </li>
+              <li routerLinkActive="active-category">
+                <!-- (click)="isOpened = false; showDropdownList = false" -->
+                <!-- [routerLink]="['/', routes.registration]" -->
+                <a
+                  class="text-decoration-none"
+                  routerLinkActive="active-link"
+                  href="https://www.mygov.in/group-issue/public-consultation-help-shape-ai-impact-summit-2026/"
+                  target="_blank"
+                >
+                  Public Consultation
+                  <!-- <span class="text-gray vi-hidden"> (TBA) </span> -->
+                </a>
+              </li>
+              <li
+                routerLinkActive="active-category"
+                (click)="isOpened = false; showDropdownList = false"
+              >
+                <a class="text-decoration-none" routerLinkActive="active-link">
+                  Registration <span class="text-gray"> (TBA) </span></a
+                >
+                <span class="text-gray vi-hidden"> -TBA- </span>
+              </li>
+            </ul>
+          </li>
+
+          <!--Registration-->
+
+          <!--IGF 2025-->
+          <!-- <li
+            routerLinkActive="active-category"
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <a class="text-decoration-none" routerLinkActive="active-link"
+              >IGF 2025</a
+            >
+            <span class="text-gray"> -TBA- </span>
+          </li> -->
+
+          <!--About AI Impact Summit-->
+          <li
+            routerLinkActive="active-category"
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <!-- routerLinkActive="active-link"
+          [routerLink]="['/']" -->
+            <a class="text-decoration-none"> About AI Impact Summit</a>
+            <span class="text-gray"> -TBA- </span>
+          </li>
+
+          <!--Themes-->
+          <!-- routerLinkActive="active-category" -->
+          <li
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <!-- routerLinkActive="active-link"
+          [routerLink]="['/']" -->
+            <a (click)="openPDF()" target="_blank" class="text-decoration-none"
+              >Themes</a
+            >
+            <span class="text-gray vi-hidden"> -TBA- </span>
+          </li>
+
+          <!--Agenda-->
+          <li
+            routerLinkActive="active-category"
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <!-- routerLinkActive="active-link"
+          [routerLink]="['/']" -->
+            <a class="text-decoration-none"> Agenda </a>
+            <span class="text-gray"> -TBA- </span>
+          </li>
+
+          <!--Events-->
+          <li
+            routerLinkActive="active-category"
+            (click)="onDropdownClick()"
+            class="d-flex has-child flex-column align-items-start align-items-lg-center justify-content-center position-relative"
+          >
+            <!-- routerLinkActive="active-link"
+          [routerLink]="['/']" -->
+            <a class="text-decoration-none"> Events </a>
+            <span class="text-gray vi-hidden"> -TBA- </span>
+            <ul
+              class="position-absolute navbar-section__dropdown p-0 m-0 overflow-hidden"
+              [ngClass]="showDropdownList ? 'd-block' : ''"
+            >
+              <!-- [ngStyle]="showDropdown()" -->
+              <!-- (click)="isOpened = false; showDropdownList = false" -->
+              <li
+                routerLinkActive="active-category"
+                (click)="isOpened = false; showDropdownList = false"
+                [routerLink]="['/', routes.home, routes.preSummitEvents]"
+              >
+                <a class="text-decoration-none" routerLinkActive="active-link">
+                  Host Pre-Summit Event
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!--Resources-->
+          <!-- <li
+            routerLinkActive="active-category"
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          > -->
+          <!-- routerLinkActive="active-link"
+          [routerLink]="['/']" -->
+          <!-- <a class="text-decoration-none"> Resources </a> -->
+          <!-- <span class="text-gray"> -TBA- </span> -->
+          <!-- </li> -->
+
+          <!--Logistics-->
+          <li
+            routerLinkActive="active-category"
+            (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <!-- routerLinkActive="active-link"
+          [routerLink]="['/']" -->
+            <a class="text-decoration-none"> Logistics </a>
+            <span class="text-gray"> -TBA- </span>
+          </li>
+
+          <li
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+            routerLinkActive="active-category"
+            (click)="isOpened = false; showDropdownList = false"
+            [routerLink]="['/', routes.home, routes.preSummitEvents]"
+          >
+            <a class="text-decoration-none" routerLinkActive="active-link">
+              Host Pre-Summit Event
+            </a>
+            <span class="text-gray vi-hidden"> -TBA- </span>
+          </li>
+
+          <!--India AI Mission-->
+          <li
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          >
+            <a
+              class="text-decoration-none"
+              href="https://indiaai.gov.in/"
+              target="_blank"
+            >
+              India AI Mission
+            </a>
+            <span class="text-gray vi-hidden"> -TBA- </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

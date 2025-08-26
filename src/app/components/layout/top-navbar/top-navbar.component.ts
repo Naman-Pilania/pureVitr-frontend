@@ -20,7 +20,7 @@ import { routes } from '../../../constants/routes';
     RouterLink,
     RouterLinkActive,
     NgStyle,
-  ],
+],
   templateUrl: './top-navbar.component.html',
   styleUrl: './top-navbar.component.scss'
 })
