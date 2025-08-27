@@ -90,6 +90,7 @@ export class CarouselComponent implements OnInit, OnDestroy {
 
   fetchBanners() {
     this.bannerList = this.mapBanners("desktop");
+    console.log("🚀 ~ CarouselComponent ~ fetchBanners ~ this.bannerList:", this.bannerList)
     this.bannerMobile = this.mapBanners("mobile");
     this.bannerTablet = this.mapBanners("tablet");
     if (this.bannerList.length && isPlatformBrowser(this.platformId)) {

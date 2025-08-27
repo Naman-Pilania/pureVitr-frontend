@@ -3,31 +3,55 @@ import {
   Component,
   ElementRef,
   Inject,
+  Input,
   OnDestroy,
   OnInit,
   PLATFORM_ID,
   Renderer2,
   ViewChild,
 } from '@angular/core';
-import { isPlatformBrowser, isPlatformServer, NgClass } from '@angular/common';
+import { CommonModule, isPlatformBrowser, isPlatformServer, NgClass } from '@angular/common';
 import { fromEvent, Subscription } from 'rxjs';
+import { trigger, transition, style, animate } from '@angular/animations';
 
 @Component({
   selector: 'app-promotional-bar',
   standalone: true,
-  imports: [NgClass],
+  imports: [CommonModule],
   templateUrl: './promotional-bar.component.html',
-  styleUrl: './promotional-bar.component.scss'
+  styleUrl: './promotional-bar.component.scss',
+  animations: [
+    trigger('textFade', [
+      transition(':enter', [ // entry animation
+        style({ opacity: 0, transform: 'translateY(-20px)' }),
+        animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ]),
+      transition(':leave', [ // exit animation
+        animate('500ms ease-in', style({ opacity: 0, transform: 'translateY(20px)' }))
+      ])
+    ])
+  ]
 })
 export class PromotionalBarComponent {
+  @Input() messages: string[] = ["Free Shipping on Orders Over $50! Use Code: FREESHIP at Checkout.", "New Arrivals Just Landed! Explore the Latest Trends Now.", "Limited Time Offer: Buy One, Get One 50% Off on Select Items.", "Subscribe to Our Newsletter and Get 10% Off Your First Order.", "Flash Sale Alert! Up to 70% Off on Selected Products. Hurry, While Stocks Last!", "Exclusive Online Deal: Extra 15% Off on All Clearance Items."];
   private scrollSubs?: Subscription;
+  index = 0;
+  currentMessage: string | null = this.messages[0];
 
   @ViewChild('navBarStrip') navBarStripRef!: ElementRef;
   
   constructor(
     @Inject(PLATFORM_ID) private platformId: string,
     private renderer: Renderer2
-  ) {}
+  ) {
+    setInterval(() => {
+      this.index = (this.index + 1) % this.messages.length;
+      this.currentMessage = null; // trigger leave animation
+      setTimeout(() => {
+        this.currentMessage = this.messages[this.index]; // trigger enter animation
+      }, 500); // match leave animation duration
+    }, 4000); // change every 4s
+  }
 
   ngAfterViewInit(): void {
     this.initScrollListener();
@@ -59,4 +83,13 @@ export class PromotionalBarComponent {
       },
     });
   }
+
+  // get currentMessage() {
+  //   return this.messages[this.index];
+  // }
+
+  ngOnDestroy() {
+    this.scrollSubs?.unsubscribe();
+  }
+
 }

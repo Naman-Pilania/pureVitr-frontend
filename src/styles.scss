@@ -13,7 +13,7 @@ html, body {
 body {
   margin: 0;
   color: map-get($colors, "black");
-  background-color: map-get($colors, "white");
+  // background: map-get($colors, "background-soft-pale") !important;
   font-weight: map-get($font-weights, "regular");
 }
 
@@ -33,6 +33,14 @@ blockquote {
 
 *:not(.material-icons, .fa-regular, .fa-solid) {
   font-family: $font-family !important;
+}
+
+.header-margin {
+  padding-top: 7rem;
+}
+
+.navbar-margin {
+  padding-top: 4.375rem;
 }
 
 // Font weignt classes with breakpoints.

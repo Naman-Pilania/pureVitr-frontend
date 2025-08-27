@@ -1,8 +1,10 @@
 @import "./../../../../variables";
 @import "./../../../../mixins";
 .footer {
-  background: linear-gradient(45deg, #1a0d1e, #09201f);
+  // background: linear-gradient(45deg, #FBF3D5, #BB6653);
+  background: #f5b478;
   padding-top: 5rem;
+  margin-top: 1rem;
   &::before {
     content: "";
     display: block;

@@ -1,6 +1,8 @@
 .promotional-bar {
   background-color: #FBF3D5;
   color: #BB6653;
+  padding: 0.3rem 0;
+  height: 30px;
 }
 
 .hidden {
@@ -14,4 +16,20 @@
   opacity: 1;
   transition: opacity 0.5s ease;
   pointer-events: auto;
+}
+
+.promotional-text {
+  font-weight: 700;
+  font-size: 12px;
+
+  transition: linear all 0.3s;
+
+  &.promo-text {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  &.promo-text.fade {
+    opacity: 0;
+  }
 }

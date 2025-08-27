@@ -1,7 +1,11 @@
 <header #navBarStrip height="30px" class="w-100">
   <div class="promotional-bar d-flex justify-content-center align-items-center text-center px-3">
-    <span class="promotional-text">
-      Free Shipping on Orders Over $50! Use Code: FREESHIP at Checkout.
+    <span
+      class="promotional-text"
+      *ngIf="currentMessage"
+      [@textFade]
+    >
+      {{ currentMessage }}
     </span>
   </div>
 </header>

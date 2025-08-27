@@ -1,6 +1,6 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter, withInMemoryScrolling, withRouterConfig } from '@angular/router';
-
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { appRoutes } from './app.routes';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { provideHttpClient, withFetch } from '@angular/common/http';
@@ -45,6 +45,7 @@ export const appConfig: ApplicationConfig = {
       })
     ), 
     provideAnimationsAsync(),
+    provideAnimations(),
     provideHttpClient(withFetch()),
 
   ]
