@@ -1,0 +1,12 @@
+@import "../../../../variables";
+
+::ng-deep {
+  .star-rating {
+    .star-warning {
+      width: 0.75rem;
+      height: 0.75rem;
+      margin-right: 0.1rem;
+      color: map-get($colors, "orange");
+    }
+  }
+}

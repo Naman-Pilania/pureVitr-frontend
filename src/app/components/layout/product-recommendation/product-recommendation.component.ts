@@ -2,7 +2,7 @@ import { Component, ContentChildren, CUSTOM_ELEMENTS_SCHEMA, ElementRef, Inject,
 import { SwiperOptions } from 'swiper/types';
 import { arrow_next } from '../../../constants/svg/arrowNext';
 import { arrow_prev } from '../../../constants/svg/arrowPrev';
-import { DOCUMENT, isPlatformServer } from '@angular/common';
+import { DOCUMENT, isPlatformServer, NgFor, NgIf } from '@angular/common';
 import { SwiperContainer } from 'swiper/element';
 import { ProductCardComponent } from '../cards/product-card/product-card.component';
 
@@ -10,8 +10,10 @@ import { ProductCardComponent } from '../cards/product-card/product-card.compone
   selector: 'app-product-recommendation',
   standalone: true,
   imports: [
-    ProductCardComponent
-  ],
+    ProductCardComponent,
+    NgIf,
+    NgFor
+],
   templateUrl: './product-recommendation.component.html',
   styleUrl: './product-recommendation.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -60,7 +62,7 @@ export class ProductRecommendationComponent {
       followFinger: true,
       breakpoints: {
         1300: {
-          slidesPerView: 3,
+          slidesPerView: 4,
           spaceBetween: 18,
         },
         1000: {

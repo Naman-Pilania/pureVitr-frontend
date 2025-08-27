@@ -2,7 +2,7 @@
 @import "./../../../../mixins";
 .footer {
   // background: linear-gradient(45deg, #FBF3D5, #BB6653);
-  background: #f5b478;
+  background: map-get($colors, "primary-dark" );
   padding-top: 5rem;
   margin-top: 1rem;
   &::before {

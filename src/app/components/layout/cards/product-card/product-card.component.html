@@ -1,8 +1,29 @@
 <div class="card-container">
-  <p>Chia Seed</p>
+  <!-- <p class="text-muted fw-600 text-xs py-1 m-0">Chia Seed</p> -->
+   <div class="sale-badge">
+    <p class="m-0 text-xs">20% OFF</p>
+   </div>
   <div class="img-container">
-    <img src="images/chia-seed-front.png" alt="" width="250" height="250" />
+    <img src="images/chia-seed-front.png" alt="" class="front-img" />
+    <img src="images/chia-seed-back.png" alt="" class="back-img" />
   </div>
-  <p>description</p>
-  <button class="btn btn-secondary">View Detail</button>
+  <div class="py-2">
+    <div>
+      <p class="m-0 text-xs">200gm</p>
+      <p class="fw-600 product-heading">Purevitr Chia Seeds</p>
+      <p class="product-description">Raw Chia Seeds for Eating | Protein Rick Superfood | Immunity Booster, High in Calcium, Fiber & Antioxidant | Healthy Snacks | No Preservatives</p>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <app-star-rating
+        [rating]="3.5"
+        [starSize]="'fa-xs'"
+      ></app-star-rating>
+      <p class="m-0 text-xs text-muted ">35 Reviews</p>
+    </div>
+    <p class="fw-700 text-xl">&#8377; 2000/-</p>
+    <div class="d-flex align-items-center justify-content-center flex-column gap-2">
+      <button class="w-100" id="viewDetails">View Detail</button>
+      <button class="w-100" id="buyNow">Buy Now</button>
+    </div>
+  </div>
 </div>

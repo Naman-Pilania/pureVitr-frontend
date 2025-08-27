@@ -37,6 +37,7 @@ export class PromotionalBarComponent {
   private scrollSubs?: Subscription;
   index = 0;
   currentMessage: string | null = this.messages[0];
+  intervalId: any;
 
   @ViewChild('navBarStrip') navBarStripRef!: ElementRef;
   
@@ -44,7 +45,7 @@ export class PromotionalBarComponent {
     @Inject(PLATFORM_ID) private platformId: string,
     private renderer: Renderer2
   ) {
-    setInterval(() => {
+    this.intervalId = setInterval(() => {
       this.index = (this.index + 1) % this.messages.length;
       this.currentMessage = null; // trigger leave animation
       setTimeout(() => {
@@ -84,12 +85,11 @@ export class PromotionalBarComponent {
     });
   }
 
-  // get currentMessage() {
-  //   return this.messages[this.index];
-  // }
-
   ngOnDestroy() {
     this.scrollSubs?.unsubscribe();
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 
 }

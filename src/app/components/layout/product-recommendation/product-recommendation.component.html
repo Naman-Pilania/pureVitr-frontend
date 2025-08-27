@@ -18,3 +18,8 @@
   </swiper-container>
   <!-- <div class="announcement-swiper-pagination swiper-pagination"></div> -->
 </div>
+<div class="container my-5 d-none d-md-grid" style="grid-template-columns: repeat(5, 1fr); gap: 1rem;">
+  <ng-container *ngFor="let card of [1,2,3,4,5,6,7,8,9,10]">
+    <app-product-card></app-product-card>
+  </ng-container>
+</div>

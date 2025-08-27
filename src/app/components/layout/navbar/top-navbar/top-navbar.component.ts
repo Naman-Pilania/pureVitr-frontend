@@ -8,7 +8,7 @@ import {
 import { MatMenuModule } from '@angular/material/menu';
 import { isPlatformBrowser, NgClass, NgStyle } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { routes } from '../../../constants/routes';
+import { routes } from '../../../../constants/routes';
 
 @Component({
   selector: 'app-top-navbar',
@@ -28,7 +28,7 @@ export class TopNavbarComponent implements OnInit {
   isOpened = false;
   showDropdownList = false;
   dropdownStyle: { [key: string]: string | number } = {};
-  logoPath = 'images/ai-kosh-header-logo.svg';
+  logoPath = 'images/purevitr-logo.png';
   readonly routes = routes;
 
   constructor(@Inject(PLATFORM_ID) private platformId: string) {}
