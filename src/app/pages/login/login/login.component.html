@@ -1,18 +1,32 @@
 <div class="container">
-  <div>
-    <p>Welcome back!!</p>
-    <app-input
-      label="Email"
-      placeholder="Enter your email"
-      type="email"
-      [control]="utilityService.$formControl(loginForm.get('email'))"
-    ></app-input>
-    <app-input
-      label="Email"
-      placeholder="Enter your email"
-      type="email"
-      [control]="utilityService.$formControl(loginForm.get('email'))"
-    ></app-input>
-    <button class="btn btn-primary w-100 mt-3">Login</button>
+  <div class="d-md-block d-none">
+    <img src="" alt="">
+  </div>
+  <div class="login-container">
+    <div class="d-flex justify-content-center flex-column align-items-center gap-3 mb-4">
+      <img src="images/trademark-logo.png" alt="Purevitr" height="100" class="logo-image">
+      <p class="text-xxl m-0 text__primary fw-600">Login To Purevitr</p>
+    </div>
+    <div class="my-3">
+      <app-input
+        label="Email"
+        placeholder="Enter your email"
+        type="email"
+        [control]="utilityService.$formControl(loginForm.get('email'))"
+        [required]="true"
+      ></app-input>
+    </div>
+    <div class="my-3">
+      <app-input
+        label="Email"
+        placeholder="Enter your email"
+        type="email"
+        [control]="utilityService.$formControl(loginForm.get('email'))"
+        [required]="true"
+      ></app-input>
+      <p class="m-0 text-xs fw-600">Forgot Password?</p>
+    </div>
+    <button class="btn btn-primary mt-3">Login</button>
+    <p class="my-2 text-sm ">New User? <span class="text__primary fw-600" [routerLink]="['/', routes.home, routes.register]">Register Now</span></p>
   </div>
 </div>

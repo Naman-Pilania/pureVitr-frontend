@@ -1,1 +1,45 @@
-<p>register works!</p>
+<div class="container">
+  <div class="d-md-block d-none">
+    <img src="" alt="">
+  </div>
+  <div class="register-container">
+    <div class="d-flex justify-content-center flex-column align-items-center gap-3 mb-4">
+      <img src="images/trademark-logo.png" alt="Purevitr" height="100" class="logo-image">
+      <p class="text-xxl m-0 text__primary fw-600">Welcome to Purevitr</p>
+    </div>
+    <div class="my-3">
+      <app-input
+        label="Email"
+        placeholder="Enter your email"
+        type="email"
+        [control]="utilityService.$formControl(registerForm.get('email'))"
+      ></app-input>
+    </div>
+    <div class="my-3">
+      <app-input
+        label="Email"
+        placeholder="Enter your email"
+        type="email"
+        [control]="utilityService.$formControl(registerForm.get('email'))"
+      ></app-input>
+    </div>
+    <div class="my-3">
+      <app-input
+        label="Email"
+        placeholder="Enter your email"
+        type="email"
+        [control]="utilityService.$formControl(registerForm.get('email'))"
+      ></app-input>
+    </div>
+    <div class="my-3">
+      <app-input
+        label="Email"
+        placeholder="Enter your email"
+        type="email"
+        [control]="utilityService.$formControl(registerForm.get('email'))"
+      ></app-input>
+    </div>
+    <button class="btn btn-primary mt-3">Register</button>
+    <p class="my-2 text-sm ">Alreay a User? <span class="text__primary fw-600" [routerLink]="['/', routes.home, routes.login]">Login</span></p>
+  </div>
+</div>

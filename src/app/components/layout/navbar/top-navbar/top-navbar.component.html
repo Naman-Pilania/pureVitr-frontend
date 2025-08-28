@@ -204,12 +204,14 @@
               <li
                 routerLinkActive="active-category"
                 [routerLink]="['/', routes.home, routes.login]"
+                (click)="isOpened = false; showDropdownList = false"
                 >
                 Login
               </li>
               <li
                 routerLinkActive="active-category" 
                 [routerLink]="['/', routes.home, routes.register]"
+                (click)="isOpened = false; showDropdownList = false"
                 >
                 Register
               </li>
