@@ -42,8 +42,8 @@ export class TopNavbarComponent implements OnInit {
   setLogo() {
     const isDarkMode = document?.body?.classList.contains('dark');
     this.logoPath = isDarkMode
-      ? 'images/ai-kosh-white-logo.svg' // Dark Mode Logo
-      : 'images/ai-kosh-header-logo.svg'; // Light Mode Logo
+      ? 'images/purevitr-logo.png' // Dark Mode Logo
+      : 'images/purevitr-logo.png'; // Light Mode Logo
   }
   observeThemeChanges() {
     const observer = new MutationObserver(() => this.setLogo());

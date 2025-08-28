@@ -11,8 +11,9 @@
 
   .sale-badge {
     position: absolute;
-    z-index: 2;
-    background-color: map-get($colors, "primary-dark");
+    z-index: 3;
+    background-color: #038b03;
+    // background-color: map-get($colors, "primary-dark");
     padding: 2px 8px;
     border-radius: 0 8px 8px 0;
     color: white;
@@ -48,6 +49,7 @@
     font-size: 14px;
     letter-spacing: 2px;
     margin-bottom: 2px;
+    color: map-get($colors, "primary-dark" );
   }
 
   .product-description {

@@ -1,8 +1,8 @@
 @import "./../../../../variables";
 @import "./../../../../mixins";
 .footer {
-  // background: linear-gradient(45deg, #FBF3D5, #BB6653);
-  background: map-get($colors, "primary-dark" );
+  // background: linear-gradient(45deg, map-get($colors, "primary" ), map-get($colors, "primary-dark" ));
+  background: map-get($colors, "primary" );
   padding-top: 5rem;
   margin-top: 1rem;
   &::before {
@@ -23,7 +23,7 @@
     background: rgb(0 0 0 / 30%);
     h3 {
       font-size: 1.75rem; // 28px
-      color: map-get($colors, "white");
+      color: map-get($colors, "primary-dark");
       font-weight: map-get($font-weights, "bold");
       span {
         color: map-get($colors, "primary");
@@ -43,12 +43,12 @@
   &__col-first {
     p {
       font-size: map-get($font-sizes, "base");
-      color: map-get($colors, "white");
+      color: map-get($colors, "primary-dark");
     }
     ul {
       li {
         list-style: none;
-        color: map-get($colors, "white");
+        color: map-get($colors, "primary-dark");
         &:not(:last-child) {
           margin-bottom: 0.5rem;
         }
@@ -58,7 +58,7 @@
   &__col-mid {
     h4 {
       font-size: map-get($font-sizes, "base");
-      color: map-get($colors, "white");
+      color: map-get($colors, "primary-dark");
       margin-bottom: 1rem;
       font-weight: map-get($font-weights, "bold");
     }
@@ -66,7 +66,7 @@
       li {
         list-style: none;
         font-size: map-get($font-sizes, "sm");
-        color: map-get($colors, "white");
+        color: map-get($colors, "primary-dark");
         opacity: 0.8;
         cursor: pointer;
         @include transition();
@@ -94,7 +94,7 @@
 
 .powered-by {
   span {
-    color: map-get($colors, "white");
+    color: map-get($colors, "primary-dark");
     margin-right: 0.25rem;
   }
 }
@@ -106,13 +106,13 @@
     background: map-get($colors, "black");
   }
   p {
-    color: map-get($colors, "white");
+    color: map-get($colors, "primary-dark");
     font-size: map-get($font-sizes, "sm");
   }
   ul {
     gap: 1.5rem;
     li {
-      color: map-get($colors, "white");
+      color: map-get($colors, "primary-dark");
       font-size: map-get($font-sizes, "sm");
       list-style: none;
       transition: all ease-in-out 0.3s;
@@ -137,7 +137,11 @@
 }
 
 .visitor-no {
-  border: 1px solid white;
+  border: 1px solid primary-dark;
   padding: 3px 8px;
   border-radius: 1rem;
+}
+
+a {
+  color: map-get($colors, "primary-dark" );
 }
