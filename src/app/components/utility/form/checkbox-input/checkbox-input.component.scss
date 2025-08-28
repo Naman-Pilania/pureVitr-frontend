@@ -1,0 +1,13 @@
+@import "../../../../../variables";
+@import "../../../../../mixins";
+
+.form-check-input {
+  &:focus {
+    border-color: map-get($colors, "gray");
+    @include box-shadow("form-control-gray");
+  }
+  &:checked {
+    background-color: map-get($colors, "black");
+    border-color: map-get($colors, "black");
+  }
+}

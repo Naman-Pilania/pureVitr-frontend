@@ -1,0 +1,42 @@
+<div class="form-group">
+  <label *ngIf="label">
+    {{ label }} <span *ngIf="required" class="text-danger">*</span>
+  </label>
+  <div class="input-icon-wrapper">
+    <span class="icon-left" [innerHTML]="emailBlackSVG | safeHTML"></span>
+    <input
+      type="email"
+      class="form-control input-with-icon"
+      [placeholder]="placeholder"
+      [value]="value"
+      (input)="onInputChange($event)"
+      [class.border-red]="control.errors && control.touched"
+      [ngClass]="{'email-verified': isEmailVerified.value}"
+      [readonly]="isEmailVerified.value"
+      [formControl]="control"
+      [maxlength]="maxLength"
+      [required]="required"
+    />
+    <button 
+      *ngIf="!isEmailVerified.value"
+      [disabled]="control.invalid || control.pristine"
+      class="btn-text verify-email fw-600" 
+      (click)="onVerify.emit()"
+    >
+      Verify
+    </button>
+    <img *ngIf="isEmailVerified.value" class="btn-text verify-email" src="images/Checkmark-Circle.svg" alt="">
+  </div>
+  <div *ngIf="isEmailVerified.value" class="icon-verified">
+    <mat-icon class="email-verified-icon">check</mat-icon>
+    <span class="mt-1">Email verified and secured</span>
+  </div>
+  <div *ngIf="!isEmailVerified.value && control.touched && !control.errors" class="icon-error">
+    <mat-icon class="email-error-icon">error</mat-icon>
+    <span class="mt-1">Please verify your Email</span>
+  </div>
+  <div *ngIf="control.errors && control.touched" class="text-danger">
+    <ng-container *ngIf="control.errors?.['required']">This field is required.</ng-container>
+    <ng-container *ngIf="control.errors?.['email'] || control.errors?.['pattern']">Please enter a valid email address.</ng-container>
+  </div>
+</div>

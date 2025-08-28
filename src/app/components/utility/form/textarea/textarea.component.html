@@ -1,0 +1,31 @@
+<div class="form-group">
+  <label *ngIf="label"
+    >{{ label }} <span *ngIf="required" class="text-danger">*</span></label
+  >
+  <img
+  *ngIf="tooltip"
+    [matTooltip]="tooltip"
+    width="12"
+    height="12"
+    src="images/info_icon.svg"
+    class="mx-2"
+  />
+  <textarea
+    class="form-control"
+    [rows]="rows"
+    [placeholder]="placeholder"
+    [required]="required"
+    [value]="value ? value : ''"
+    (input)="onInput($event)"
+    [ngClass]="{'border-red': control.touched && control.invalid}"
+    [formControl]="control"
+    [maxlength]="maxLength"
+  ></textarea>
+  <div *ngIf="control.errors && control.touched" class="text-danger">
+    <ng-container *ngIf="control.errors?.['required']">This field is required.</ng-container>
+    <ng-container *ngIf="control.errors?.['email']">Please enter a valid email address.</ng-container>
+  </div>
+  <div *ngIf="maxLength" class="text-muted small mt-1">
+    {{ control.value.length }}/{{ maxLength }}
+  </div>
+</div>

@@ -49,7 +49,7 @@
     font-size: 14px;
     letter-spacing: 2px;
     margin-bottom: 2px;
-    color: map-get($colors, "primary-dark" );
+    color: map-get($colors, "primary" );
   }
 
   .product-description {
@@ -63,8 +63,8 @@
 
   #viewDetails {
     font-size: 14px;
-    color: map-get($colors, "primary-dark");
-    border: 2px solid map-get($colors, "primary-dark");
+    color: map-get($colors, "primary");
+    border: 2px solid map-get($colors, "primary");
     padding: 0.5rem 1rem;
     border-radius: 1rem;
 
@@ -79,7 +79,7 @@
   #buyNow {
     font-size: 14px;
     color: map-get($colors, "white");
-    background-color: map-get($colors, "primary-dark");
+    background-color: map-get($colors, "primary");
     border: none;
     padding: 0.5rem 1rem;
     border-radius: 1rem;

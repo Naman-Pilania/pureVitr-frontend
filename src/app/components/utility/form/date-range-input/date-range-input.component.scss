@@ -1,0 +1,125 @@
+@import "../../../../../variables.scss";
+@import "../../../../../mixins.scss";
+
+::ng-deep {
+  .date-range-input {
+    &.focussed {
+      .mat-mdc-text-field-wrapper {
+        @include box-shadow("form-control-gray");
+      }
+    }
+
+    &.error.touched {
+      .mat-mdc-text-field-wrapper {
+        border-color: map-get($colors, "danger");
+      }
+    }
+
+    &.error.focussed {
+      .mat-mdc-text-field-wrapper {
+        @include box-shadow("form-control-danger");
+      }
+    }
+
+    .mat-mdc-form-field-infix {
+      min-height: 1rem !important;
+    }
+
+    .mat-mdc-text-field-wrapper {
+      border: 1px solid map-get($colors, "control-border-default");
+      border-radius: 0.65rem !important;
+      padding: 0.75rem !important;
+    }
+
+    .mat-date-range-input-inner {
+      font-size: map-get($font-sizes, "sm") !important;
+
+      &::placeholder {
+        color: map-get($colors, "gray");
+        font-weight: map-get($font-weights, "semibold");
+      }
+    }
+
+    .mat-date-range-input-separator {
+      margin: 0 1rem 0 0.25rem !important;
+      color: map-get($colors, "black") !important;
+      opacity: 1 !important;
+    }
+
+    .mdc-text-field--outlined .mat-mdc-form-field-infix,
+    .mdc-text-field--no-label .mat-mdc-form-field-infix {
+      padding-top: 0 !important;
+    }
+
+    .mdc-text-field--outlined .mat-mdc-form-field-infix,
+    .mdc-text-field--no-label .mat-mdc-form-field-infix {
+      padding-bottom: 0 !important;
+    }
+
+    .mat-mdc-form-field-subscript-wrapper {
+      display: none;
+    }
+
+    .mdc-line-ripple {
+      display: none;
+    }
+  }
+
+  .mat-calendar {
+    background-color: map-get($colors, "white");
+    border: 1px solid map-get($colors, "gray-light");
+    border-radius: 0.75rem;
+    @include box-shadow();
+
+    .mat-calendar-header {
+      padding-top: 0;
+    }
+
+    .mat-calendar-body-selected {
+      color: map-get($colors, "white");
+      background-color: map-get($colors, "black");
+    }
+
+    .mat-calendar-body-selected.mat-calendar-body-today {
+      box-shadow: inset 0 0 0 1px map-get($colors, "black");
+    }
+
+    .mat-calendar-body-today:not(.mat-calendar-body-selected):not(
+        .mat-calendar-body-comparison-identical
+      ) {
+      border-color: map-get($colors, "black");
+    }
+
+    .mat-calendar-body-in-range::before {
+      background-color: map-get($colors, "primary-bg");
+    }
+
+    .mat-calendar-body-in-preview {
+      color: map-get($colors, "primary");
+    }
+
+    .mat-mdc-button .mat-mdc-button-persistent-ripple::before {
+      background-color: map-get($colors, "primary");
+    }
+
+    .mat-ripple-element {
+      background-color: map-get($colors, "primary-bg") !important;
+    }
+  }
+}
+
+.input-icon-wrapper {
+  position: relative;
+
+  .calendar-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+
+  .input-with-icon {
+    padding-left: 3rem;
+  }
+}

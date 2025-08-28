@@ -1,0 +1,33 @@
+<div>
+  <label *ngIf="label">
+    {{ label }} <span *ngIf="required" class="text-danger">*</span>
+  </label>
+  <img
+  *ngIf="tooltip"
+    [matTooltip]="tooltip"
+    width="12"
+    height="12"
+    src="images/info_icon.svg"
+    class="mx-2"
+  />
+  <div class="d-flex justify-content-between gap-2">
+    <app-searchable-dropdown
+      class="col-sm-4 col-3 "
+      [options]="options"
+      [displayField]="'name'"
+      [placeholder]="'Country Code'"
+      [multiple]="false"
+      [control]="utilityService.$formControl(control.get('countryCode'))"
+      [required]="true"
+      (selectionChange)="onCountryChange($event)"
+    ></app-searchable-dropdown>
+    <app-input
+      class="col-sm-8 col-9"
+      [placeholder]="'xxxxxxxxxx'"
+      [required]="true"
+      [control]="utilityService.$formControl(control.get('phoneNumber'))"
+      [controlName]="'Phone Number'"
+      (valueChange)="control.get('countryCode')?.markAsTouched()"
+    ></app-input>
+  </div>
+</div>

@@ -1,0 +1,115 @@
+@import "./../../../../../variables.scss";
+@import "./../../../../../mixins";
+
+::ng-deep {
+    .custom-dropdown {
+        width: 100%;
+
+        .mdc-text-field {
+            padding: 0;
+        }
+
+        .mat-mdc-text-field-wrapper {
+            border: 1px solid map-get($colors, "control-border-default");
+            border-radius: 0.375rem;
+
+            .mat-mdc-form-field-infix {
+                padding: 0.45rem 1rem;
+                min-height: fit-content;
+            }
+        }
+
+        .mdc-line-ripple::before {
+            border-bottom: none;
+        }
+
+        .mdc-text-field--filled .mdc-line-ripple::after {
+            border: none;
+        }
+
+        .mat-mdc-select-arrow svg {
+            fill: map-get($colors, "black") !important;
+        }
+    }
+
+    .custom-select-input {
+        .mat-mdc-select-placeholder {
+            // font-size: map-get($font-sizes, "md");
+            font-size: 16px;
+            //   color: map-get($colors, "gray");
+            //   font-weight: map-get($font-weights, "semibold");
+            font-weight: 380;
+        }
+    }
+
+    .mat-mdc-select-panel {
+        background-color: white !important;
+        padding-top: 0px !important;
+
+        // .mat-mdc-option-active {
+        // background-color: white !important;
+
+        // }
+    }
+
+    .mat-mdc-option {
+        //   padding-top: 0.5rem;
+        //   padding-bottom: 0.5rem;
+        // background-color: white;
+
+        .mdc-list-item__primary-text {
+            color: map-get($colors, "black");
+            font-size: map-get($font-sizes, "sm");
+            font-weight: map-get($font-sizes, "regular");
+        }
+
+        .info-icon-container {
+            padding-bottom: 0.2rem;
+        }
+
+        &.mdc-list-item--selected:not(.mdc-list-item--disabled):not(.mat-mdc-option-multiple) {
+            background-color: map-get($colors, primary-bg);
+
+            .mdc-list-item__primary-text {
+                color: map-get($colors, "primary");
+            }
+
+            .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-checked::after,
+            .mat-pseudo-checkbox-minimal.mat-pseudo-checkbox-indeterminate::after {
+                color: map-get($colors, "primary");
+            }
+        }
+    }
+}
+
+::ng-deep .error .mat-mdc-text-field-wrapper {
+    color: red !important;
+    border-color: red !important;
+}
+
+::ng-deep .error .mat-select-trigger {
+    color: red !important;
+}
+  
+.error-text {
+    margin-top: -15px;   
+}
+
+.search-container {
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    background-color: white;
+    .search-input {
+        padding: 0.5rem 1rem;
+        width: 100%;
+        border: 1px solid map-get($colors, "control-border-default");
+        border-radius: 0.375rem;
+        margin: 5px 0px;
+    
+      ::selection {
+        background-color: transparent;
+        border: none;
+      }
+    }
+}

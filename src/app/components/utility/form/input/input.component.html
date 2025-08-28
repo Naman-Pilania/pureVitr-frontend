@@ -1,0 +1,30 @@
+<div class="form-group">
+  <div class="d-flex align-items-center gap-1">
+    <label *ngIf="label"
+    >{{ label }} <span *ngIf="required" class="text-danger">*</span></label
+  >
+    <img
+    *ngIf="tooltip"
+      [matTooltip]="tooltip"
+      width="12"
+      height="12"
+      src="images/info_icon.svg"
+    />
+  </div>
+  <input
+    [type]="type"
+    class="form-control"
+    [placeholder]="placeholder"
+    [value]="value"
+    (input)="onInputChange($event)"
+    [ngClass]="{'border-red': control.touched && control.invalid}"
+    [formControl]="control"
+    [maxlength]="maxLength"
+    [required]="required"
+  />
+  <div *ngIf="control.errors && control.touched" class="text-danger">
+    <ng-container *ngIf="control.errors?.['required']">This field is required.</ng-container>
+    <ng-container *ngIf="control.errors?.['email']">Please enter a valid email address.</ng-container>
+    <ng-container *ngIf="control.errors?.['pattern']">Please enter a valid {{label || controlName}}.</ng-container>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div>
+  <label *ngIf="label">
+    {{ label }} <span *ngIf="required" class="text-danger">*</span>
+  </label>
+  <img
+  *ngIf="tooltip"
+    [matTooltip]="tooltip"
+    width="12"
+    height="12"
+    src="images/info_icon.svg"
+    class="mx-2"
+  />
+
+  <mat-form-field
+    appearance="fill"
+    class="custom-dropdown"
+    [ngClass]="{
+      'error': control.errors && control.touched
+    }"
+  >
+    <mat-select
+      class="custom-select-input"
+      [placeholder]="placeholder"
+      [multiple]="multiple"
+      (selectionChange)="selectionChange.emit($event.value)"
+      [required]="required"
+      (closed)="control.markAsTouched()"
+    >
+    <div class="search-container"> 
+      <input #searchSelectInput 
+        [placeholder]="'Search...'"
+        [formControl]="searchControl"
+        required
+        class="search-input"
+      >
+    </div>
+      <mat-option [matTooltip]="option.name" *ngFor="let option of filteredCountry$ | async" [value]="option">
+        {{ option.label }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <div *ngIf="control.errors && control.touched" class="text-danger error-text">
+    <ng-container *ngIf="control.errors?.['required']">This field is required.</ng-container>
+    <ng-container *ngIf="control.errors?.['email']">Please enter a valid email address.</ng-container>
+  </div>
+</div>

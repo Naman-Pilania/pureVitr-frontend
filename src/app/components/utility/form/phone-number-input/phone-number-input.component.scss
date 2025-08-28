@@ -1,0 +1,26 @@
+.phone-input {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  .phone-fields {
+    display: flex;
+    gap: 8px;
+
+    select {
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    input {
+      flex: 1;
+      padding: 8px;
+      font-size: 14px;
+    }
+  }
+
+  .error {
+    font-size: 12px;
+    color: red;
+  }
+}

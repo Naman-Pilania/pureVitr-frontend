@@ -1,0 +1,25 @@
+<div class="form-group">
+  <label *ngIf="label">
+    {{ label }} <span *ngIf="required" class="text-danger">*</span>
+  </label>
+
+  <div class="input-icon-wrapper position-relative">
+    <input
+      matInput
+      [matDatepicker]="picker"
+      class="form-control input-with-icon"
+      [placeholder]="placeholder || 'MM/DD/YYYY'"
+      [required]="required"
+      (click)="openDatePicker()"
+      [formControl]="control"
+      [id]="inputId"
+      [max]="maxDate"
+      [min]="minDate"
+      [readonly]="true"
+    />
+
+    <mat-icon class="calendar-icon">calendar_today</mat-icon>
+
+    <mat-datepicker #picker></mat-datepicker>
+  </div>
+</div>
