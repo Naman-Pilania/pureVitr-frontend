@@ -1,0 +1,71 @@
+@import "../../../../variables.scss";
+
+.images-container {
+  overflow: auto;
+
+  // img {
+  //   height: 100%;
+  //   width: 100%;
+  //   object-fit: cover;
+  //   border-radius: 0.5rem;
+  // }
+}
+
+
+.product-images-carousel-arrows {
+  padding: 6px;
+  border-radius: 8px;
+  background-color: map-get($colors, "primary" );
+  border: none;
+  position: absolute;
+
+  &.product-images-arrow--prev {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  &.product-images-arrow--next {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.announcement_updates {
+  color: map-get($colors, 'primary');
+}
+
+::ng-deep {
+  .announcement-swiper-pagination {
+    position: absolute;
+    bottom: -1.375rem !important;
+    height: 10px;
+    top: auto !important;
+  }
+}
+
+.slider-image {
+  border: 1px solid map-get($colors, "primary-light");
+  background-color: map-get($colors,"primary-pale" );
+}
+
+.selected {
+  border: 1px solid map-get($colors, "primary");
+}
+
+.slider-container {
+  // max-width: 600px;
+  margin: 0 2rem;
+}
+
+.product-variant {
+  padding: 1rem;
+  border: 1px solid map-get($colors, "primary" );
+}
+
+.add_quantity {
+  .quatity-input {
+    width: 40px;
+  }
+}

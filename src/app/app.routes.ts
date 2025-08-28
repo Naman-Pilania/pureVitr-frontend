@@ -37,6 +37,13 @@ export const appRoutes: Routes = [
             (m) => m.RegisterComponent
           ),
       },
+      {
+        path: `${routes.product}/:id`,
+        loadComponent: () =>
+          import('./pages/product/view-detail/view-detail.component').then(
+            (m) => m.ViewDetailComponent
+          ),
+      },
     ]
   }
 ];

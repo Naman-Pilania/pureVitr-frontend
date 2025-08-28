@@ -1,5 +1,8 @@
 @import "./variables";
 @import "./mixins";
+@import "swiper/scss";
+@import "swiper/scss/navigation";
+@import "swiper/scss/pagination";
 
 * {
   box-sizing: border-box;

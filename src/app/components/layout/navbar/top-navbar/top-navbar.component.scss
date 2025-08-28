@@ -117,6 +117,8 @@ ul > li {
     li {
       list-style: none;
       font-size: map-get($font-sizes, "sm");
+      font-weight: 600;
+      color: map-get($colors, "primary" );
       cursor: pointer;
       height: 5rem; //80px
       display: flex;
@@ -140,7 +142,7 @@ ul > li {
       }
 
       a {
-        color: map-get($colors, "black");
+        color: map-get($colors, "primary" );
         &:hover {
           color: map-get($colors, "primary");
         }
@@ -237,7 +239,7 @@ ul > li {
     }
   }
   &__left {
-    gap: 1.125rem; //18px
+    gap: 3rem; //18px
     .brand-logo {
       min-width: 96px;
       flex: 1;

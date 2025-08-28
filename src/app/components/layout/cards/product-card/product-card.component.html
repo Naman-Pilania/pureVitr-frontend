@@ -22,7 +22,7 @@
     </div>
     <p class="fw-700 text-xl">&#8377; 2000/-</p>
     <div class="d-flex align-items-center justify-content-center flex-column gap-2">
-      <button class="w-100" id="viewDetails">View Detail</button>
+      <button class="w-100" id="viewDetails" [routerLink]="['/', routes.home, routes.product, 1]">View Detail</button>
       <button class="w-100" id="buyNow">Buy Now</button>
     </div>
   </div>

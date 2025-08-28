@@ -3,6 +3,6 @@ export const routes = {
   questions: 'questions',
   login: 'login',
   register: 'register',
-  preSummitEvents: 'pre-summit-events',
+  product: 'product',
   apply: 'apply',
 };

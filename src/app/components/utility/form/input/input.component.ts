@@ -21,6 +21,7 @@ export class InputComponent {
   @Input() maxLength!: number;
   @Input() tooltip: string = '';
   @Input() controlName: string = '';
+  @Input() readonly = false;
 
   @Output() valueChange = new EventEmitter<string >();
 

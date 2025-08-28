@@ -1,0 +1,82 @@
+<div class="container my-4 d-flex gap-4">
+  <div class="col-md-6">
+    <img src="images/chia-seeds/1.jpg" alt="" class="img-fluid selected" />
+    <div class="position-relative">
+      <img src="images/prev-arrow.svg" alt="prev" class="product-images-carousel-arrows product-images-arrow--prev">
+      <div class="slider-container mt-3">
+        <swiper-container
+          id="product-images-swiper-container"
+          init="false"
+          #swiperContainer
+        >
+        @for (
+          i of [1,2,3,4,5,6,7,8];
+          track i;
+          let index = $index
+        ) {
+          <swiper-slide>
+            <div class="slider-image">
+              <img 
+                src="images/chia-seeds/{{i}}.jpg" 
+                alt="" 
+                class="img-fluid"
+              />
+            </div>
+          </swiper-slide>
+        }
+        </swiper-container>
+      </div>
+      <img src="images/next-arrow.svg" alt="next" class="product-images-carousel-arrows product-images-arrow--next">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <h2>Purevitr Chia Seeds</h2>
+    <p>Raw and Unroasted Seeds | Protein Rich Superfood | High in Calcium, Fiber & Antioxidants | No Preservatives</p>
+    <div class="d-flex align-items-center gap-2">
+      <app-star-rating [rating]="4.5"></app-star-rating>
+      <p class="m-0">4.5</p>
+      <p class="m-0">| 25 Reviews</p>
+    </div>
+    <div>
+      <h3 class="fw-600">&#8377; 2000/- <span class="text-muted text-decoration-line-through">2500</span>
+    </h3>
+    <!-- <span class="text-xs fw-500 mx-3">MRP (Incl of All taxes)</span>  -->
+    </div>
+    <div>
+      <p>Select Variant</p>
+      <div class="d-flex align-items-center gap-3 flex-wrap">
+        <div class="product-variant">
+          <p class="m-0">200gm</p>
+          <p>&#8377; 2000/-</p>
+        </div>
+        <div class="product-variant">
+          <p class="m-0">400gm</p>
+          <p>&#8377; 2000/-</p>
+        </div>
+        <div class="product-variant">
+          <p class="m-0">1kg</p>
+          <p>&#8377; 2000/-</p>
+        </div>
+      </div>
+    </div>
+    <div class="add_quantity my-3">
+      <p>Add Quantity</p>
+      <div class="d-flex align-items-center gap-3">
+        <button class="btn btn-outline-secondary">-</button>
+        <app-input
+          [control]="utilityService.$formControl(addProductForm.get('review'))"
+          class="quatity-input"
+          [readonly]="true"
+        ></app-input>
+        <button class="btn btn-outline-secondary">+</button>
+      </div>
+    </div>
+    <div>
+      <button class="btn btn-primary w-100">Add To Cart</button>
+    </div>
+    <div class="product-desc">
+      <!-- <h4 class="fw-600">Product Description</h4>
+      <p>Chia seeds are tiny black seeds from the plant Salvia hispanica, which is related to mint. They are native to Central and South America and have been consumed for centuries due to their nutritional benefits. Chia seeds are rich in omega-3 fatty acids, fiber, protein, antioxidants, and various micronutrients such as calcium, magnesium, and phosphorus. They can absorb liquid and form a gel-like consistency, making them a popular addition to smoothies, yogurt, oatmeal, and baked goods. Chia seeds are also known for their potential health benefits, including improved digestion, heart health, and weight management.</p> -->
+    </div>
+  </div>
+</div>

@@ -12,7 +12,7 @@ import DOMPurify from 'dompurify';
 export class StarRatingComponent {
   ratingValue!: number;
   starRatingSafeHTML!: SafeHtml;
-  @Input({required: true}) starSize: 'fa-xs' | '' = 'fa-xs';
+  @Input() starSize: 'fa-xs' | '' = 'fa-xs';
   @Input({ required: true }) set rating(value: number) {
     const maxRating = 5;
     const roundedRating = Math.round(value * 2) / 2 || 0; // Round to nearest 0.5

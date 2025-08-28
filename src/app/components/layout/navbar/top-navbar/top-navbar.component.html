@@ -10,11 +10,12 @@
     <div class="mobile-menu w-100 gap-3">
       <div class="brand-logo cursor-pointer" [routerLink]="['/']">
         <img
-          width="124"
-          height="56"
+          width="200"
+          height="80"
           [src]="logoPath"
           alt="Purevitr"
           title="Purevitr"
+          [routerLink]="['/']"
         />
       </div>
       <div class="d-flex align-items-center justify-content-end gap-3">
@@ -41,17 +42,18 @@
       [ngClass]="{ opened: isOpened }"
     >
       <div class="navbar-section__left d-flex align-items-center">
-        <div class="brand-logo cursor-pointer" [routerLink]="['/']">
-          <img
-            width="96"
-            height="44"
-            fetchpriority="high"
-            [src]="'images/purevitr-logo.png'"
-            alt="Purevitr"
-            title="Purevitr"
-            style="z-index: 1; background-color: none !important;"
-          />
-        </div>
+        <img
+          width="200"
+          height="80"
+          fetchpriority="high"
+          [src]="'images/purevitr-logo.png'"
+          alt="Purevitr"
+          title="Purevitr"
+          style="z-index: 1; background-color: none !important;"
+          [routerLink]="['/']"
+        />
+        <!-- <div class="brand-logo cursor-pointer" [routerLink]="['/']">
+        </div> -->
         <ul
           class="navbar-section__menu d-flex justify-content-start p-0 m-0 w-100 w-md-auto"
         >

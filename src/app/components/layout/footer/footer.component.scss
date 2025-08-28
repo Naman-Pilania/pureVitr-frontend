@@ -4,6 +4,7 @@
   // background: linear-gradient(45deg, map-get($colors, "primary" ), map-get($colors, "primary-dark" ));
   background: map-get($colors, "primary-light-bg" );
   overflow: hidden;
+  position: relative;
   // padding-top: 5rem;
   margin-top: 1rem;
   &::before {

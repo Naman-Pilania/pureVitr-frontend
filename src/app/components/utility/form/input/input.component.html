@@ -21,6 +21,7 @@
     [formControl]="control"
     [maxlength]="maxLength"
     [required]="required"
+    [readOnly]="readonly"
   />
   <div *ngIf="control.errors && control.touched" class="text-danger">
     <ng-container *ngIf="control.errors?.['required']">This field is required.</ng-container>
