@@ -22,7 +22,21 @@ export const appRoutes: Routes = [
           import('./pages/questionnaire/questionnaire/questionnaire.component').then(
             (m) => m.QuestionnaireComponent
           ),
-      }
+      },
+      {
+        path: routes.login,
+        loadComponent: () =>
+          import('./pages/login/login/login.component').then(
+            (m) => m.LoginComponent
+          ),
+      },
+      {
+        path: routes.register,
+        loadComponent: () =>
+          import('./pages/register/register/register.component').then(
+            (m) => m.RegisterComponent
+          ),
+      },
     ]
   }
 ];

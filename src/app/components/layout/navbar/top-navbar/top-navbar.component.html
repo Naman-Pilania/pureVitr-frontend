@@ -37,7 +37,7 @@
       </div>
     </div>
     <div
-      class="web-menu navbar-section d-flex align-items-center justify-content-center"
+      class="web-menu navbar-section d-flex align-items-center justify-content-between"
       [ngClass]="{ opened: isOpened }"
     >
       <div class="navbar-section__left d-flex align-items-center">
@@ -49,7 +49,7 @@
             [src]="'images/purevitr-logo.png'"
             alt="Purevitr"
             title="Purevitr"
-            style="z-index: 1; background-color: none !important"
+            style="z-index: 1; background-color: none !important;"
           />
         </div>
         <ul
@@ -147,7 +147,6 @@
               <li
                 routerLinkActive="active-category"
                 (click)="isOpened = false; showDropdownList = false"
-                [routerLink]="['/', routes.stakeholderConsultation]"
               >
                 <a class="text-decoration-none" routerLinkActive="active-link">
                   Wood-Pressed Oils
@@ -173,6 +172,51 @@
                 >
               </li>
             </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="navbar-section__right d-flex align-items-center">
+        <ul 
+          class="navbar-section__menu d-flex justify-content-start p-0 m-0 w-100 w-md-auto"
+          >
+          <li
+            (click)="onDropdownClick()" 
+            class="d-flex has-child flex-column align-items-start align-items-lg-center justify-content-center position-relative">
+            <div class="d-flex align-items-center cursor-pointer">
+              <img src="images/user-profile.png" height="30" alt="">
+              <svg
+                width="6"
+                height="4"
+                viewBox="0 0 6 4"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M0.807026 1.80675L2.53369 3.53341C2.79369 3.79341 3.21369 3.79341 3.47369 3.53341L5.20036 1.80675C5.62036 1.38675 5.32036 0.666748 4.72703 0.666748H1.27369C0.68036 0.666748 0.387027 1.38675 0.807026 1.80675Z"
+                  fill="#212121"
+                />
+              </svg>
+            </div>
+            <ul 
+              class="position-absolute navbar-section__dropdown p-0 m-0 overflow-hidden"
+              [ngClass]="showDropdownList ? 'd-block' : ''"
+              >
+              <li
+                routerLinkActive="active-category"
+                [routerLink]="['/', routes.home, routes.login]"
+                >
+                Login
+              </li>
+              <li
+                routerLinkActive="active-category" 
+                [routerLink]="['/', routes.home, routes.register]"
+                >
+                Register
+              </li>
+            </ul>
+          </li>
+          <li>
+            <mat-icon>shopping_cart</mat-icon>
           </li>
         </ul>
       </div>

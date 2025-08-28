@@ -232,7 +232,7 @@ ul > li {
         &:hover {
           background: map-get($colors, "primary-light");
           color: map-get($colors, "primary");
-        }
+        } 
       }
     }
   }
@@ -240,6 +240,7 @@ ul > li {
     gap: 1.125rem; //18px
     .brand-logo {
       min-width: 96px;
+      flex: 1;
       @media (max-width: map-get($breakpoints, "lg")) {
         padding: 0 1rem;
       }

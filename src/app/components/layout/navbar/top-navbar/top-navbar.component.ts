@@ -9,6 +9,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { isPlatformBrowser, NgClass, NgStyle } from '@angular/common';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { routes } from '../../../../constants/routes';
+import { userProfileIcon } from '../../../../constants/svg/user-profile.svg';
+import { SafeHtmlPipe } from '../../../../pipes/safe-html.pipe';
+import { MatIconModule } from '@angular/material/icon'
 
 @Component({
   selector: 'app-top-navbar',
@@ -20,16 +23,19 @@ import { routes } from '../../../../constants/routes';
     RouterLink,
     RouterLinkActive,
     NgStyle,
+    SafeHtmlPipe,
+    MatIconModule
 ],
   templateUrl: './top-navbar.component.html',
   styleUrl: './top-navbar.component.scss'
 })
 export class TopNavbarComponent implements OnInit {
+  readonly routes = routes;
+  readonly profileIcon = userProfileIcon;
   isOpened = false;
   showDropdownList = false;
   dropdownStyle: { [key: string]: string | number } = {};
   logoPath = 'images/purevitr-logo.png';
-  readonly routes = routes;
 
   constructor(@Inject(PLATFORM_ID) private platformId: string) {}
 

@@ -1,8 +1,8 @@
 export const routes = {
   home: 'home',
   questions: 'questions',
-  stakeholderConsultation: 'stakeholder-consultation',
-  ifg2025: 'ifg-2025',
+  login: 'login',
+  register: 'register',
   preSummitEvents: 'pre-summit-events',
   apply: 'apply',
 };
