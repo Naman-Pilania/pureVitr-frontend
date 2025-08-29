@@ -14,19 +14,25 @@
   & .profile {
     margin: 1rem 0;
     &.__left-section {
-      // margin: 0 1rem;
+      border-right: 1px solid map-get($colors, "primary");
     }
   }
 
   .profile-btn {
     padding: 1rem 2rem;
-    background-color: map-get($colors, "primary-light-bg" );
-    color: map-get($colors, "white");
+    color: map-get($colors, "primary-light-bg");
     font-size: large;
     font-weight: 600;
-    
+    cursor: pointer;
+
     &.selected-category {
-      background-color: map-get($colors, "primary");
+      border-left: 5px solid map-get($colors, "primary");
+      color: map-get($colors, "primary");
+    }
+
+    &:hover {
+      color: map-get($colors, "primary");
+      transition: all ease-in-out 0.3s;
     }
   }
 
