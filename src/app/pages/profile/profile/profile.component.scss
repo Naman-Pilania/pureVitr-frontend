@@ -12,16 +12,18 @@
 
 
   & .profile {
-    padding: 1rem 0;
+    margin: 1rem 0;
     &.__left-section {
-  
+      // margin: 0 1rem;
     }
   }
 
   .profile-btn {
-    padding: 0.5rem 1rem;
+    padding: 1rem 2rem;
     background-color: map-get($colors, "primary-light-bg" );
     color: map-get($colors, "white");
+    font-size: large;
+    font-weight: 600;
     
     &.selected-category {
       background-color: map-get($colors, "primary");

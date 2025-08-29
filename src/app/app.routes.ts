@@ -87,7 +87,7 @@ export const appRoutes: Routes = [
       {
         path: routes.cart,
         loadComponent: () =>
-          import('./pages/profile/cart/cart.component').then(
+          import('./pages/profile/orders/cart/cart.component').then(
             (m) => m.CartComponent
           ),
       },
