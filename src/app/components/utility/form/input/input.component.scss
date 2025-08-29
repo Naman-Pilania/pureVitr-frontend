@@ -5,3 +5,17 @@
 .form-control {
     font-size: 17px !important;
 }
+
+.password-field {
+    position: relative;
+
+    input {
+        padding-right: 50px;
+    }
+
+}
+.eye-icon {
+    position: absolute;
+    right: 10px;
+    top: 20%;
+}

@@ -1,0 +1,42 @@
+@import '../../../../variables.scss';
+
+.variant-container {
+}
+.product-variant {
+  // padding: 1rem;
+  border: 2px solid map-get($colors, "primary-light-bg" );
+  cursor: pointer;
+  // border-radius: 10px;
+  min-width: 100px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  text-align: center;
+  &:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+  }
+
+  &.selected {
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;
+  }
+
+  & .variant-quatity {
+    padding: 1rem 2rem;
+    color: map-get($colors, "white" );
+    font-weight: bold;
+    background-color: map-get($colors, "primary-light-bg" );
+
+    
+    &.selected {
+      background-color: map-get($colors, "primary" );
+    }
+  }
+
+  & .variant-price {
+    padding: 0.5rem;
+    font-weight: bold;
+    color: map-get($colors, "secondary" );
+  }
+
+  &.selected {
+    border: 2px solid map-get($colors, "primary" );
+  }
+}

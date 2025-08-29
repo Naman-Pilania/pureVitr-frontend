@@ -11,18 +11,25 @@
       src="images/info_icon.svg"
     />
   </div>
-  <input
-    [type]="type"
-    class="form-control"
-    [placeholder]="placeholder"
-    [value]="value"
-    (input)="onInputChange($event)"
-    [ngClass]="{'border-red': control.touched && control.invalid}"
-    [formControl]="control"
-    [maxlength]="maxLength"
-    [required]="required"
-    [readOnly]="readonly"
-  />
+  <div [ngClass]="{'password-field': isPasswordField}">
+    <input
+      [type]="type"
+      class="form-control"
+      [placeholder]="placeholder"
+      [value]="value"
+      (input)="onInputChange($event)"
+      [ngClass]="{'border-red': control.touched && control.invalid}"
+      [formControl]="control"
+      [maxlength]="maxLength"
+      [required]="required"
+      [readOnly]="readonly"
+    />
+    <span *ngIf="isPasswordField" class="eye-icon" (click)="tooglePasswordVisiblity()">
+      <mat-icon>
+        {{ hidePassword ? 'visibility_off' : 'visibility' }}
+      </mat-icon>
+    </span>
+  </div>
   <div *ngIf="control.errors && control.touched" class="text-danger">
     <ng-container *ngIf="control.errors?.['required']">This field is required.</ng-container>
     <ng-container *ngIf="control.errors?.['email']">Please enter a valid email address.</ng-container>

@@ -9,11 +9,17 @@ import { StarRatingComponent } from "../../../components/utility/star-rating/sta
 import { TextareaComponent } from "../../../components/utility/form/textarea/textarea.component";
 import { FormControl, FormGroup } from '@angular/forms';
 import { InputComponent } from '../../../components/utility/form/input/input.component';
+import { VariantsComponent } from "../variants/variants.component";
+import { DescriptionComponent } from "../description/description.component";
+import { RegisterComponent } from "../../register/register/register.component";
+import { ReviewsComponent } from "../reviews/reviews.component";
+import { RelatedProductsComponent } from "../related-products/related-products.component";
+import { FaqsComponent } from "../faqs/faqs.component";
 
 @Component({
   selector: 'app-view-detail',
   standalone: true,
-  imports: [CommonModule, StarRatingComponent, InputComponent],
+  imports: [CommonModule, StarRatingComponent, InputComponent, VariantsComponent, DescriptionComponent, RegisterComponent, ReviewsComponent, RelatedProductsComponent, FaqsComponent],
   templateUrl: './view-detail.component.html',
   styleUrl: './view-detail.component.scss',
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
@@ -50,7 +56,7 @@ export class ViewDetailComponent {
     }
 
     const swiperProps: SwiperOptions = {
-      slidesPerView: 1.2,
+      slidesPerView: 6,
       speed: 500,
       spaceBetween: 18,
       navigation: {
@@ -73,11 +79,15 @@ export class ViewDetailComponent {
           spaceBetween: 18,
         },
         1000: {
-          slidesPerView: 3,
+          slidesPerView: 5,
           spaceBetween: 18,
         },
         768: {
-          slidesPerView: 2,
+          slidesPerView: 5,
+          spaceBetween: 18,
+        },
+        640: {
+          slidesPerView: 6,
           spaceBetween: 18,
         },
       },

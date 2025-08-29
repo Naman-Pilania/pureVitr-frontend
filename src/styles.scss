@@ -171,4 +171,13 @@ blockquote {
   &__blue-gray {
     color: map-get($colors, "blue-gray");
   }
+  &_justify {
+    text-align: justify !important;
+  }
+}
+
+.icon {
+  &_primary {
+    color: map-get($colors, "primary" );
+  }
 }

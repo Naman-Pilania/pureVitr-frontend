@@ -57,7 +57,7 @@
         <ul
           class="navbar-section__menu d-flex justify-content-start p-0 m-0 w-100 w-md-auto"
         >
-          <li
+          <!-- <li
             (click)="isOpened = false; showDropdownList = false"
             class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
           >
@@ -67,7 +67,7 @@
               All Products
             </a
             >
-          </li>
+          </li> -->
           <li
             (click)="isOpened = false; showDropdownList = false"
             class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
@@ -79,7 +79,7 @@
             </a
             >
           </li>
-          <li
+          <!-- <li
             (click)="isOpened = false; showDropdownList = false"
             class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
           >
@@ -89,7 +89,7 @@
               A2 Ghee
             </a
             >
-          </li>
+          </li> -->
         <li
           (click)="isOpened = false; showDropdownList = false"
           class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
@@ -181,11 +181,14 @@
         <ul 
           class="navbar-section__menu d-flex justify-content-start p-0 m-0 w-100 w-md-auto"
           >
+          <li>
+            <mat-icon>search</mat-icon>
+          </li>
           <li
             (click)="onDropdownClick()" 
             class="d-flex has-child flex-column align-items-start align-items-lg-center justify-content-center position-relative">
             <div class="d-flex align-items-center cursor-pointer">
-              <img src="images/user-profile.png" height="30" alt="">
+              <mat-icon>person</mat-icon>
               <svg
                 width="6"
                 height="4"

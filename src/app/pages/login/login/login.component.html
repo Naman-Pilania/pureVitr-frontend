@@ -18,11 +18,12 @@
     </div>
     <div class="my-3">
       <app-input
-        label="Email"
-        placeholder="Enter your email"
-        type="email"
-        [control]="utilityService.$formControl(loginForm.get('email'))"
+        label="Password"
+        placeholder="Enter your password"
+        [control]="utilityService.$formControl(loginForm.get('password'))"
         [required]="true"
+        [isPasswordField]="true"
+        type="password"
       ></app-input>
       <p class="m-0 text-xs fw-600">Forgot Password?</p>
     </div>

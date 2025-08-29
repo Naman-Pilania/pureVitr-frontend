@@ -1,0 +1,10 @@
+@import '../../../../../variables.scss';
+
+.review-card-container {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  width: fit-content;
+  border-radius: 1rem;
+  margin: 1rem 0;
+  position: relative;
+}

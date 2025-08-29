@@ -1,0 +1,10 @@
+<div>
+  <h4 class="fw-600 text-xl">WHAT OUR CUSTOMER SAYS</h4>
+  <div class="row">
+    @for (item of [1,2,3,4,5,6,7,8]; track $index) {
+      <div class="col-xl-3  col-md-4 col-sm-4">
+        <app-review-card></app-review-card>
+      </div>
+    }
+  </div>
+</div>
