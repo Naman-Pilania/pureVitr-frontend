@@ -55,6 +55,10 @@
     height: 10px;
     top: auto !important;
   }
+
+  .swiper-pagination-bullet-active {
+    background: map-get($colors, "primary-light-bg") !important;
+  }
 }
 
 .hero-carousel-arrow {

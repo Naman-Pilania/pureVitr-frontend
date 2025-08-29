@@ -291,7 +291,7 @@ ul > li {
     a.active-link {
       color: map-get($colors, "primary");
     }
-    border-color: map-get($colors, "primary") !important;
+    background-color: map-get($colors, "primary-light-bg") !important;
   }
 }
 

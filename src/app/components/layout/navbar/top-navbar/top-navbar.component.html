@@ -97,84 +97,153 @@
           <a
             class="text-decoration-none"
           >
-            Wood-Pressed Oils
+            Seeds
           </a
           >
         </li>
         <li
-          (click)="isOpened = false; showDropdownList = false"
-          class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+          class="d-flex has-child flex-column align-items-start align-items-lg-center justify-content-center position-relative"
+          (click)="onDropdownClick()"
         >
-          <a
-            class="text-decoration-none"
+          <div class="d-flex align-items-center cursor-pointer">
+            <a
+              class="text-decoration-none"
+            >
+              Shop
+            </a>
+            <svg
+            width="6"
+            height="4"
+            viewBox="0 0 6 4"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
-            Shop
-          </a
+            <path
+              d="M0.807026 1.80675L2.53369 3.53341C2.79369 3.79341 3.21369 3.79341 3.47369 3.53341L5.20036 1.80675C5.62036 1.38675 5.32036 0.666748 4.72703 0.666748H1.27369C0.68036 0.666748 0.387027 1.38675 0.807026 1.80675Z"
+              fill="#212121"
+            />
+          </svg>
+          </div>
+          <ul
+          class="position-absolute navbar-section__dropdown p-0 m-0 overflow-hidden"
+          [ngClass]="showDropdownList ? 'd-block' : ''"
+        >
+          <li routerLinkActive="active-category">
+            <a
+              class="text-decoration-none"
+              routerLinkActive="active-link"
+              href="https://www.mygov.in/task/logo-design-contest-ai-impact-summit/"
+              target="_blank"
+            >
+              A2 Ghee
+            </a>
+          </li>
+          <li
+            routerLinkActive="active-category"
+            (click)="isOpened = false; showDropdownList = false"
           >
+            <a class="text-decoration-none" routerLinkActive="active-link">
+              Wood-Pressed Oils
+            </a>
+          </li>
+          <li routerLinkActive="active-category">
+            <a
+              class="text-decoration-none"
+              routerLinkActive="active-link"
+              href="https://www.mygov.in/group-issue/public-consultation-help-shape-ai-impact-summit-2026/"
+              target="_blank"
+            >
+              Shop
+            </a>
+          </li>
+          <li
+            routerLinkActive="active-category"
+            (click)="isOpened = false; showDropdownList = false"
+          >
+            <a class="text-decoration-none" routerLinkActive="active-link">
+              Healthy Combo
+            </a
+            >
+          </li>
+          </ul>
         </li>
         <li
-          (click)="isOpened = false; showDropdownList = false"
-          class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
+        class="d-flex has-child flex-column align-items-start align-items-lg-center justify-content-center position-relative"
+        (click)="onDropdownClick()"
         >
+        <div class="d-flex align-items-center cursor-pointer">
           <a
             class="text-decoration-none"
           >
             Healthy Combo
-          </a
+            </a>
+          <svg
+            width="6"
+            height="4"
+            viewBox="0 0 6 4"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
           >
+            <path
+              d="M0.807026 1.80675L2.53369 3.53341C2.79369 3.79341 3.21369 3.79341 3.47369 3.53341L5.20036 1.80675C5.62036 1.38675 5.32036 0.666748 4.72703 0.666748H1.27369C0.68036 0.666748 0.387027 1.38675 0.807026 1.80675Z"
+              fill="#212121"
+            />
+          </svg>
+        </div>
+          <ul
+            class="position-absolute navbar-section__dropdown p-0 m-0 overflow-hidden"
+            [ngClass]="showDropdownList ? 'd-block' : ''"
+          >
+            <li routerLinkActive="active-category">
+              <a
+                class="text-decoration-none"
+                routerLinkActive="active-link"
+                href="https://www.mygov.in/task/logo-design-contest-ai-impact-summit/"
+                target="_blank"
+              >
+                A2 Ghee
+              </a>
+            </li>
+            <li
+              routerLinkActive="active-category"
+              (click)="isOpened = false; showDropdownList = false"
+            >
+              <a class="text-decoration-none" routerLinkActive="active-link">
+                Wood-Pressed Oils
+              </a>
+            </li>
+            <li routerLinkActive="active-category">
+              <a
+                class="text-decoration-none"
+                routerLinkActive="active-link"
+                href="https://www.mygov.in/group-issue/public-consultation-help-shape-ai-impact-summit-2026/"
+                target="_blank"
+              >
+                Shop
+              </a>
+            </li>
+            <li
+              routerLinkActive="active-category"
+              (click)="isOpened = false; showDropdownList = false"
+            >
+              <a class="text-decoration-none" routerLinkActive="active-link">
+                Healthy Combo
+              </a
+              >
+            </li>
+          </ul>
         </li>
-          <li
-            (click)="onDropdownClick()"
-            class="d-flex has-child flex-column align-items-start align-items-lg-center justify-content-center position-relative"
+        <!-- <li
+        (click)="isOpened = false; showDropdownList = false"
+            class="d-flex flex-column align-items-start align-items-lg-center justify-content-center"
           >
             <a
               class="text-decoration-none fw-700"
             >
               Blogs
             </a>
-            <ul
-              class="position-absolute navbar-section__dropdown p-0 m-0 overflow-hidden"
-              [ngClass]="showDropdownList ? 'd-block' : ''"
-            >
-              <li routerLinkActive="active-category">
-                <a
-                  class="text-decoration-none"
-                  routerLinkActive="active-link"
-                  href="https://www.mygov.in/task/logo-design-contest-ai-impact-summit/"
-                  target="_blank"
-                >
-                  A2 Ghee
-                </a>
-              </li>
-              <li
-                routerLinkActive="active-category"
-                (click)="isOpened = false; showDropdownList = false"
-              >
-                <a class="text-decoration-none" routerLinkActive="active-link">
-                  Wood-Pressed Oils
-                </a>
-              </li>
-              <li routerLinkActive="active-category">
-                <a
-                  class="text-decoration-none"
-                  routerLinkActive="active-link"
-                  href="https://www.mygov.in/group-issue/public-consultation-help-shape-ai-impact-summit-2026/"
-                  target="_blank"
-                >
-                  Shop
-                </a>
-              </li>
-              <li
-                routerLinkActive="active-category"
-                (click)="isOpened = false; showDropdownList = false"
-              >
-                <a class="text-decoration-none" routerLinkActive="active-link">
-                  Healthy Combo
-                </a
-                >
-              </li>
-            </ul>
-          </li>
+            
+        </li> -->
         </ul>
       </div>
       <div class="navbar-section__right d-flex align-items-center">
@@ -220,9 +289,22 @@
                 >
                 Register
               </li>
+              <li
+                routerLinkActive="active-category" 
+                [routerLink]="['/', routes.home, routes.profile]"
+                (click)="isOpened = false; showDropdownList = false"
+                >
+                Profile
+              </li>
+              <li
+                routerLinkActive="active-category" 
+                (click)="isOpened = false; showDropdownList = false"
+                >
+                Logout
+              </li>
             </ul>
           </li>
-          <li>
+          <li [routerLink]="['/', routes.home, routes.cart]" (click)="isOpened = false; showDropdownList = false">
             <mat-icon>shopping_cart</mat-icon>
           </li>
         </ul>

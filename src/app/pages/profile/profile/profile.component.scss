@@ -1,0 +1,31 @@
+@import '../../../../variables.scss';
+
+.profile-container {
+  
+  padding: 4rem 1rem;
+
+
+  .logo-image {
+    border-radius: 50%;
+    
+  }
+
+
+  & .profile {
+    padding: 1rem 0;
+    &.__left-section {
+  
+    }
+  }
+
+  .profile-btn {
+    padding: 0.5rem 1rem;
+    background-color: map-get($colors, "primary-light-bg" );
+    color: map-get($colors, "white");
+    
+    &.selected-category {
+      background-color: map-get($colors, "primary");
+    }
+  }
+
+}

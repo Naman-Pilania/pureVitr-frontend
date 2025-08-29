@@ -4,5 +4,10 @@ export const routes = {
   login: 'login',
   register: 'register',
   product: 'product',
-  apply: 'apply',
+  profile: 'profile',
+  accountInfo: 'account-info',
+  cart: 'cart',
+  orders: 'orders',
+  changePassword: 'change-password',
+  savedAddress: 'saved-address',
 };

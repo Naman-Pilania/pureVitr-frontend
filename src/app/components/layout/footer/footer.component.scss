@@ -5,12 +5,12 @@
   background: map-get($colors, "primary-light-bg" );
   overflow: hidden;
   position: relative;
-  // padding-top: 5rem;
+  padding-top: 1rem;
   margin-top: 1rem;
   &::before {
     content: "";
     display: block;
-    background: url(../../../../../public/images/mandala-art.png) no-repeat;
+    // background: url(../../../../../public/images/mandala-art.png) no-repeat;
     // height: 50%;
     position: absolute;
     inset: 0;
@@ -147,4 +147,16 @@
 
 a {
   color: map-get($colors, "primary" );
+}
+
+.footer-text-heading {
+  text-transform: uppercase;
+}
+
+.social_icons {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  
 }

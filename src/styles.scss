@@ -179,5 +179,24 @@ blockquote {
 .icon {
   &_primary {
     color: map-get($colors, "primary" );
+    margin: 0 5px;
   }
+  &_white {
+    color: map-get($colors, "white" ) !important;
+  }
+  &_bg {
+    
+    &_primary {
+      // padding: 5px 8px;
+      height: 30px;
+      width: 30px;
+      border-radius: 50%;
+      background-color: map-get($colors, "primary" );
+      color: map-get($colors, "white" ) !important;
+    }
+  }
+}
+
+.mat-icon {
+  overflow: visible !important;
 }

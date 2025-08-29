@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="profile-container">
+    <div class="d-flex justify-content-center flex-column align-items-center gap-3 mb-4">
+      <img src="images/trademark-logo.png" alt="Purevitr" height="100" class="logo-image">
+    </div>
+    <div class="row g-4">
+      <div class="profile profile __left-section col-md-3">
+        <p 
+          class="profile-btn" 
+          routerLinkActive="selected-category" 
+          [routerLink]="[routes.accountInfo]"
+        >
+          Account Info
+        </p>
+        <p 
+          class="profile-btn" 
+          routerLinkActive="selected-category" 
+          [routerLink]="[routes.savedAddress]"
+          >
+          Saved Addresses
+        </p>
+        <p 
+          class="profile-btn" 
+          routerLinkActive="selected-category" 
+          [routerLink]="[routes.orders]"
+          >
+          My Orders
+        </p>
+        <p 
+          class="profile-btn" 
+          routerLinkActive="selected-category" 
+          [routerLink]="[routes.changePassword]"
+          >
+          Change Password
+        </p>
+      </div>
+      <div class="profile profile __right-section col-md-9">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+
+  </div>
+</div>

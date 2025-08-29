@@ -5,17 +5,25 @@ import { Subject, takeUntil } from 'rxjs';
 import { DecimalPipe } from '@angular/common';
 import { socialLinks } from '../../../constants/social-links';
 import { ApiService } from '../../../services/api.service';
+import { MatIcon } from '@angular/material/icon';
+import { instaIcon } from '../../../constants/svg/insta.svg';
+import { facebookIcon } from '../../../constants/svg/facebook.svg';
+import { twitterXIcon } from '../../../constants/svg/twiiter-x.svg';
+import { SafeHtmlPipe } from '../../../pipes/safe-html.pipe';
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [RouterLink, DecimalPipe],
+  imports: [RouterLink, DecimalPipe, MatIcon, SafeHtmlPipe],
   templateUrl: './footer.component.html',
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
   routes = routes;
   readonly socialLinks = socialLinks;
+  readonly instagramIcon = instaIcon;
+  readonly facebookIcon = facebookIcon;
+  readonly twitterXIcon = twitterXIcon;
   public currentYear = 2025;
   public visitorCount: number = 0;
   private destroy$ = new Subject<boolean>();

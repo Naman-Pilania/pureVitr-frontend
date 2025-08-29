@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 28" width="28" height="28">
+	<title>twitter-svg</title>
+	<defs>
+		<image width="512" height="463" id="img1" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHNoYXBlLXJlbmRlcmluZz0iZ2VvbWV0cmljUHJlY2lzaW9uIiB0ZXh0LXJlbmRlcmluZz0iZ2VvbWV0cmljUHJlY2lzaW9uIiBpbWFnZS1yZW5kZXJpbmc9Im9wdGltaXplUXVhbGl0eSIgZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIHZpZXdCb3g9IjAgMCA1MTIgNDYyLjc5OSI+PHBhdGggZmlsbD0iI2ZmZiIgZmlsbC1ydWxlPSJub256ZXJvIiBkPSJNNDAzLjIyOSAwaDc4LjUwNkwzMTAuMjE5IDE5Ni4wNCA1MTIgNDYyLjc5OUgzNTQuMDAyTDIzMC4yNjEgMzAxLjAwNyA4OC42NjkgNDYyLjc5OWgtNzguNTZsMTgzLjQ1NS0yMDkuNjgzTDAgMGgxNjEuOTk5bDExMS44NTYgMTQ3Ljg4TDQwMy4yMjkgMHptLTI3LjU1NiA0MTUuODA1aDQzLjUwNUwxMzguMzYzIDQ0LjUyN2gtNDYuNjhsMjgzLjk5IDM3MS4yNzh6Ii8+PC9zdmc+"/>
+	</defs>
+	<style>
+		.s0 { fill: #ffffff } 
+		.s1 { fill: none;stroke: #bababa } 
+	</style>
+	<use id="x-social-media-white-icon" href="#img1" transform="matrix(.022,0,0,.022,8,9)"/>
+	<path fill-rule="evenodd" class="s0" d="m12.3 18.2c0 0 0.2 0 0 0 0 0 0 0 0 0z"/>
+	<path fill-rule="evenodd" class="s0" d="m15.8 10q0 0 0 0z"/>
+	<path class="s1" d="m14 0.5c7.5 0 13.5 6 13.5 13.5 0 7.5-6 13.5-13.5 13.5-7.5 0-13.5-6-13.5-13.5 0-7.5 6-13.5 13.5-13.5z"/>
+</svg>
