@@ -7,7 +7,6 @@
 
   .logo-image {
     border-radius: 50%;
-    
   }
 
 
@@ -16,7 +15,8 @@
     &.__left-section {
       position: sticky;
       top: 150px;
-      height: 200px;
+      height: fit-content;
+      overflow: hidden;
     }
     
     &.__right-section {

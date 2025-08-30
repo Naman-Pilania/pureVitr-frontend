@@ -1,0 +1,67 @@
+<mat-dialog-content>
+  <div class="add-addres-container">
+    <div class="d-flex justify-content-center flex-column align-items-center gap-3 mb-4">
+      <img src="images/trademark-logo.png" alt="Purevitr" height="100" class="logo-image">
+    </div>
+    <h5 class="fw-600 text__primary">Add Addresses</h5>
+    <div class="d-flex flex-column gap-4">
+      <div class="row row-gap-4">
+        <div class="col-md-6">
+          <app-input
+            [control]="utilityService.$formControl(addressForm.get('address'))"
+            placeholder="First Name"
+          ></app-input>
+        </div>
+        <div class="col-md-6">
+          <app-input
+            [control]="utilityService.$formControl(addressForm.get('address'))"
+            placeholder="Last Name"
+          ></app-input>
+        </div>
+      </div>
+      <app-input
+        [control]="utilityService.$formControl(addressForm.get('address'))"
+        placeholder="House/Flat No."
+      ></app-input>
+      <app-input
+        [control]="utilityService.$formControl(addressForm.get('address'))"
+        placeholder="Address Line 2"
+      ></app-input>
+      <div class="row row-gap-4">
+        <app-input
+          [control]="utilityService.$formControl(addressForm.get('address'))"
+          placeholder="City"
+          class="col-md-6"
+        ></app-input>
+        <app-input
+          [control]="utilityService.$formControl(addressForm.get('address'))"
+          placeholder="Country"
+          class="col-md-6"
+        ></app-input>
+      </div>
+      <div class="row">
+        <app-input
+          [control]="utilityService.$formControl(addressForm.get('address'))"
+          placeholder="PinCode"
+          class="col-md-6"
+        ></app-input>
+        <app-input
+          [control]="utilityService.$formControl(addressForm.get('address'))"
+          placeholder="Contact"
+          class="col-md-6"
+        ></app-input>
+      </div>
+      <app-checkbox-input
+        [control]="utilityService.$formControl(addressForm.get('address'))"
+        [inputId]="'default-address'"
+        [label]="'Set as Default Address'"
+      ></app-checkbox-input>
+    </div>
+  </div>
+</mat-dialog-content>
+<mat-dialog-actions >
+  <!-- <div class="d-flex align-items-center justify-content-between mt-4"> -->
+    <button class="btn btn-primary flex-grow-1 mx-3">Add</button>
+    <button class="btn btn-bordered-red flex-grow-1 mx-3" mat-dialog-close>Cancel</button>
+  <!-- </div> -->
+</mat-dialog-actions>

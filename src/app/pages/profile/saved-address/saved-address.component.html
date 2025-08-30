@@ -1,1 +1,18 @@
-<p>saved-address works!</p>
+
+<div class="saved_addresses_container">
+  <h5 class="fw-600 text__primary">Saved Addresses</h5>
+  <div class="row row-gap-3">
+    @for(i of [1,2,3,4,5,6]; track i) {
+      <div class="col-md-6">
+        <app-address-card></app-address-card>
+      </div>
+    }
+  </div>
+  <button class="btn btn-bordered mt-3" (click)="openPanel()">Add Other Address</button>
+  <!-- <div class="sideNav" [ngClass]="{'open': sidepanel}">
+    <div class="address-form-container">
+      <h5 class="fw-600 text__primary">Add Address</h5>
+    </div>
+  </div> -->
+  <!-- <app-side-panel></app-side-panel> -->
+</div>

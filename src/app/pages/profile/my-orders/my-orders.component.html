@@ -1,1 +1,6 @@
-<p>my-orders works!</p>
+<div class="my-orders-container">
+  <h5 class="fw-600 text__primary">My Orders</h5>
+  @for(i of [1,2,4,5]; track i) {
+    <app-order-card></app-order-card>
+  }
+</div>

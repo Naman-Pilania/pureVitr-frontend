@@ -1,0 +1,21 @@
+@import '../../../../../variables.scss';
+
+.address-container {
+  .address-box {
+    border: 1px solid map-get($colors, "primary");
+    padding: 1rem;
+    border-radius: 10px;
+    // color: map-get($colors, "$key: ");
+    &:hover {
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      cursor: pointer;
+    }
+  }
+
+  .edit_addres {
+    margin: 0;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

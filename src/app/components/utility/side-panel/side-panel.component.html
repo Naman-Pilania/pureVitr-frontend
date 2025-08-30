@@ -1,0 +1,32 @@
+<!-- Button to open the drawer -->
+<button mat-raised-button color="primary" (click)="drawer.toggle()">
+  Open Form
+</button>
+
+<!-- Main container with sidenav -->
+<mat-drawer-container class="drawer-container">
+  <mat-drawer #drawer mode="over" position="end" class="drawer">
+    <h2>Fill the Form</h2>
+
+    <form class="form">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Name</mat-label>
+        <input matInput placeholder="Enter your name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
+        <input matInput type="email" placeholder="Enter your email" />
+      </mat-form-field>
+
+      <button mat-raised-button color="accent" class="full-width">
+        Submit
+      </button>
+    </form>
+  </mat-drawer>
+
+  <!-- Main Content -->
+  <div class="content">
+    <p>Main page content goes here...</p>
+  </div>
+</mat-drawer-container>

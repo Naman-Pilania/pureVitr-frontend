@@ -1,0 +1,37 @@
+@import '../../../../variables.scss';
+@import '../../../../mixins.scss';
+
+::ng-deep {
+  .add-address-dialog {
+    // width: 95vw;
+    // max-width: 95vw !important;
+    // max-height: 90vh !important;
+
+    .mat-mdc-dialog-surface {
+      background-color: map-get($colors, "white");
+      border-radius: 0.5rem;
+    }
+
+    .mat-mdc-dialog-content {
+      margin: auto;
+      max-height: fit-content !important;
+    }
+
+    .mat-mdc-dialog-container-with-actions .mat-mdc-dialog-content {
+      color: map-get($colors, "black");
+      // padding: 0;
+    }
+
+    .mat-mdc-dialog-actions {
+      border-top: 1px solid map-get($colors, "gray-mid");
+    }
+
+    @include breakpoint("md") {
+      width: 50rem;
+    }
+  }
+}
+
+.logo-image {
+  border-radius: 50%;
+}

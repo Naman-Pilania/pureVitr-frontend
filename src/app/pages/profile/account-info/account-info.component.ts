@@ -2,11 +2,13 @@ import { UtilityService } from './../../../services/utility.service';
 import { Component } from '@angular/core';
 import { InputComponent } from "../../../components/utility/form/input/input.component";
 import { FormControl, FormGroup } from '@angular/forms';
+import { TextareaComponent } from "../../../components/utility/form/textarea/textarea.component";
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-account-info',
   standalone: true,
-  imports: [InputComponent],
+  imports: [InputComponent, TextareaComponent, MatIcon],
   templateUrl: './account-info.component.html',
   styleUrl: './account-info.component.scss'
 })
@@ -24,6 +26,7 @@ export class AccountInfoComponent {
   initializeProfileForm()  {
     this.profileForm = new FormGroup({
       firstName: new FormControl(''),
+      address: new FormControl({value: '', disabled: true}),
     })
   }
 }

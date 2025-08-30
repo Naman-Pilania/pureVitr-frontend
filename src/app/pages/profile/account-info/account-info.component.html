@@ -1,108 +1,50 @@
-<div>
-  <div class="account_info-container">
-    <div class="row mb-4">
-      <app-input
-        [control]="utilityService.$formControl(profileForm.get('firstName'))"
-        label="First Name"
-        type="text"
-        placeholder="Enter First Name"
-        class="col-md-6"
-      ></app-input>
-      <app-input
-        [control]="utilityService.$formControl(profileForm.get('firstName'))"
-        label="Last Name"
-        type="text"
-        placeholder="Enter First Name"
-        class="col-md-6"
-      ></app-input>
-    </div>
-    <div class="row mb-4">
-      <app-input
-        [control]="utilityService.$formControl(profileForm.get('firstName'))"
-        label="Email"
-        type="text"
-        placeholder="Enter First Name"
-        class="col-md-6"
-      ></app-input>
-      <app-input
-        [control]="utilityService.$formControl(profileForm.get('firstName'))"
-        label="Contact"
-        type="text"
-        placeholder="Enter First Name"
-        class="col-md-6"
-      ></app-input>
-    </div>
+<div class="account_info-container">
+  <h5 class="fw-600 text__primary">Edit Profile</h5>
+  <div class="row mb-4">
     <app-input
-    [control]="utilityService.$formControl(profileForm.get('firstName'))"
-    label="Contact"
-    type="text"
-    placeholder="Enter First Name"
-    class="col-md-6"
-  ></app-input>
-  <app-input
-  [control]="utilityService.$formControl(profileForm.get('firstName'))"
-  label="Contact"
-  type="text"
-  placeholder="Enter First Name"
-  class="col-md-6"
-></app-input>
-<app-input
-[control]="utilityService.$formControl(profileForm.get('firstName'))"
-label="Contact"
-type="text"
-placeholder="Enter First Name"
-class="col-md-6"
-></app-input>
-<app-input
-[control]="utilityService.$formControl(profileForm.get('firstName'))"
-label="Contact"
-type="text"
-placeholder="Enter First Name"
-class="col-md-6"
-></app-input>
-<app-input
-[control]="utilityService.$formControl(profileForm.get('firstName'))"
-label="Contact"
-type="text"
-placeholder="Enter First Name"
-class="col-md-6"
-></app-input>
-<app-input
-[control]="utilityService.$formControl(profileForm.get('firstName'))"
-label="Contact"
-type="text"
-placeholder="Enter First Name"
-class="col-md-6"
-></app-input>
-<app-input
-[control]="utilityService.$formControl(profileForm.get('firstName'))"
-label="Contact"
-type="text"
-placeholder="Enter First Name"
-class="col-md-6"
-></app-input>
-<app-input
-[control]="utilityService.$formControl(profileForm.get('firstName'))"
-label="Contact"
-type="text"
-placeholder="Enter First Name"
-class="col-md-6"
-></app-input>
-<app-input
-[control]="utilityService.$formControl(profileForm.get('firstName'))"
-label="Contact"
-type="text"
-placeholder="Enter First Name"
-class="col-md-6"
-></app-input>
-
-
-    <div>
-      <p>Default Address</p>
-      <div>
-        address
-      </div>
-    </div>
-    
+      [control]="utilityService.$formControl(profileForm.get('firstName'))"
+      label="First Name"
+      type="text"
+      placeholder="Enter First Name"
+      class="col-md-6"
+    ></app-input>
+    <app-input
+      [control]="utilityService.$formControl(profileForm.get('firstName'))"
+      label="Last Name"
+      type="text"
+      placeholder="Enter First Name"
+      class="col-md-6"
+    ></app-input>
   </div>
+  <div class="row mb-4">
+    <app-input
+      [control]="utilityService.$formControl(profileForm.get('firstName'))"
+      label="Email"
+      type="text"
+      placeholder="Enter First Name"
+      class="col-md-6"
+    ></app-input>
+    <app-input
+      [control]="utilityService.$formControl(profileForm.get('firstName'))"
+      label="Contact"
+      type="text"
+      placeholder="Enter First Name"
+      class="col-md-6"
+    ></app-input>
+  </div>
+  <div>
+    <h5 class="fw-600 text__primary mt-3">Default Address</h5>
+    <div class="address-box mt-2">
+      <p class="fw-600 text-sm m-0 cursor-pointer">Edit/Add - Primary Address</p>
+      <app-textarea
+      [control]="utilityService.$formControl(profileForm.get('address'))"
+      placeholder="Enter Address"
+      [rows]="3"
+      ></app-textarea>
+    </div>
+  </div>
+  <div class="mt-4">
+    <button class="btn btn-primary">Save</button>
+  </div>
+  
 </div>

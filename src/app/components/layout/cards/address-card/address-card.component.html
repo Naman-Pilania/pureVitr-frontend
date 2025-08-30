@@ -1,0 +1,22 @@
+<div class="address-container">
+  <div class="address-box">
+    <p *ngIf="isDefault" class="fw-600 text-sm d-flex align-items-center gap-3"><mat-icon>location_on</mat-icon>Default Address</p>
+    <div class="d-flex justify-content-between mb-3">
+      <p class="fw-600 m-0">PureVitr Products LLP</p>
+      <div class="d-flex align-items-center gap-2">
+        <mat-icon class="text-xl"> edit</mat-icon>
+        <p class="edit_addres">Edit</p>
+      </div>
+    </div>
+    <!-- <p class="fw-600">PureVitr Products LLP</p> -->
+    <p class="m-0">
+      8, Bangalaxmi Abasan Road, P.S. Baguiati, Kolkata, North Twenty Four Paraganas
+    </p>
+    <p>West Bengal - 700136</p>
+    <p>Contact - 9999999999</p>
+    <div *ngIf="!isDefault" class="d-flex justify-content-between">
+      <button class="btn btn-primary ">Mark This as Default</button>
+      <button class="btn btn-bordered-red ">Delete</button>
+    </div>
+  </div>
+</div>

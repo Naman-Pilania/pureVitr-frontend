@@ -1,0 +1,35 @@
+@import '../../../../../variables.scss';
+@import '../../../../../mixins.scss';
+
+.order-cards {
+  padding: 1rem;
+  // border-radius: 1rem;
+  border-bottom: 1px solid map-get($colors, "primary");
+
+}
+.img-container {
+  height: 150px;
+  background-color: map-get($colors, "primary-light" );
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+}
+.product-heading {
+  font-size: 14px;
+  letter-spacing: 2px;
+  margin-bottom: 2px;
+  color: map-get($colors, "primary" );
+}
+
+.product-description {
+  color: map-get($colors, "secondary" );
+  font-size: 14px;
+  line-height: normal;  
+  margin: 5px 0;
+
+  @include line-clamp(2);
+}
