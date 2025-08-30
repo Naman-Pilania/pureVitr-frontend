@@ -50,9 +50,9 @@ export class ProductRecommendationComponent {
         prevEl: '.announcement-carousel-arrow--prev',
         nextEl: '.announcement-carousel-arrow--next',
       },
-      loop: false,
+      loop: true,
       // autoplay: {
-      //   delay: 10000,
+      //   delay: 2000,
       //   stopOnLastSlide: false,
       // },
       pagination: {
@@ -62,7 +62,7 @@ export class ProductRecommendationComponent {
       followFinger: true,
       breakpoints: {
         1300: {
-          slidesPerView: 4,
+          slidesPerView: 4.6,
           spaceBetween: 18,
         },
         1000: {

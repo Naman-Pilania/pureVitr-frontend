@@ -14,7 +14,16 @@
   & .profile {
     margin: 1rem 0;
     &.__left-section {
-      border-right: 1px solid map-get($colors, "primary");
+      position: sticky;
+      top: 150px;
+      height: 200px;
+    }
+    
+    &.__right-section {
+      border-left: 1px solid map-get($colors, "primary");
+      // overflow-y: auto;
+      // height: 500px;
+
     }
   }
 

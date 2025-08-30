@@ -93,4 +93,8 @@ export const appRoutes: Routes = [
       },
     ]
   },
+  {
+    path: '**',
+    redirectTo: routes.home
+  }
 ];
