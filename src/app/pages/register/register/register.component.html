@@ -12,7 +12,7 @@
         label="Name"
         placeholder="Enter your Name"
         type="text"
-        [control]="utilityService.$formControl(registerForm.get('fullName'))"
+        [control]="utilityService.$formControl(registerForm.get('name'))"
         [required]="true"
       ></app-input>
     </div>
@@ -46,7 +46,7 @@
         [prefixText]="'+91'"
       ></app-input>
     </div>
-    <button class="btn btn-primary mt-3">Register</button>
+    <button (click)="onSubmit()" class="btn btn-primary mt-3">Register</button>
     <p class="my-2 text-sm">Already a User? <span class="text__primary fw-600 cursor-pointer" [routerLink]="['/', routes.home, routes.login]">Login</span></p>
   </div>
 </div>

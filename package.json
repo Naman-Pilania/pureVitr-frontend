@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "start:stag": "ng serve --port=4200 --disable-host-check",
+    "start:stag": "ng serve --serve-path /stag/ --port=4200 --configuration staging",
+    "start:dev": "ng serve --port=4200 --disable-host-check",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

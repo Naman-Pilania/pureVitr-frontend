@@ -5,6 +5,7 @@ import { InputComponent } from '../../../components/utility/form/input/input.com
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { EMAIL_REGEX, PASSWORD_REGEX } from '../../../constants/regex';
+import { ApiService } from '../../../services/api.service';
 
 @Component({
   selector: 'app-register',
@@ -22,6 +23,7 @@ export class RegisterComponent {
 
   constructor(
     protected utilityService: UtilityService,
+    private apiService : ApiService,
   ) {}
 
   ngOnInit() {
@@ -33,7 +35,19 @@ export class RegisterComponent {
       email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(EMAIL_REGEX)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(PASSWORD_REGEX)]),
       phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
-      fullName: new FormControl('', [Validators.required, Validators.minLength(2)]),
+      name: new FormControl('', [Validators.required, Validators.minLength(2)]),
+    });
+  }
+
+  onSubmit() {
+    this.apiService.registerUser(this.registerForm.value).subscribe({
+      next: (response) => {
+        console.log("🚀 ~ RegisterComponent ~ onSubmit ~ response:", response)
+        this.registerForm.reset();
+      },
+      error: (error) => {
+        console.error("🚀 ~ RegisterComponent ~ onSubmit ~ error:", error)
+      }
     });
   }
 }
