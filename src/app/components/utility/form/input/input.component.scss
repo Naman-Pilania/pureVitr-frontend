@@ -20,7 +20,28 @@ input {
 
 }
 .eye-icon {
+    cursor: pointer;
     position: absolute;
     right: 10px;
     top: 20%;
 }
+
+.prefix-text {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .prefix-text span {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #555;
+    pointer-events: none;
+  }
+  
+  .prefix-text input {
+    width: 100%;
+    padding-left: 50px; /* add space for prefix */
+  }

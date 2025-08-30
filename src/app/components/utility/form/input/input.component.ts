@@ -28,6 +28,7 @@ export class InputComponent {
   @Input() controlName: string = '';
   @Input() readonly = false;
   @Input() isPasswordField = false;
+  @Input() prefixText:string =  '';
 
   @Output() valueChange = new EventEmitter<string >();
 

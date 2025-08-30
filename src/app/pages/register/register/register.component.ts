@@ -4,6 +4,7 @@ import { Component } from '@angular/core';
 import { InputComponent } from '../../../components/utility/form/input/input.component';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { EMAIL_REGEX, PASSWORD_REGEX } from '../../../constants/regex';
 
 @Component({
   selector: 'app-register',
@@ -29,11 +30,10 @@ export class RegisterComponent {
 
   inilitializeRegisterForm() {
     this.registerForm = new FormGroup({
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
+      email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(EMAIL_REGEX)]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.pattern(PASSWORD_REGEX)]),
       phoneNumber: new FormControl('', [Validators.required, Validators.pattern('^[0-9]{10}$')]),
       fullName: new FormControl('', [Validators.required, Validators.minLength(2)]),
-      
     });
   }
 }

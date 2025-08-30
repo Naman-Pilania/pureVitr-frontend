@@ -9,10 +9,11 @@
     </div>
     <div class="my-3">
       <app-input
-        label="Email"
-        placeholder="Enter your email"
-        type="email"
-        [control]="utilityService.$formControl(registerForm.get('email'))"
+        label="Name"
+        placeholder="Enter your Name"
+        type="text"
+        [control]="utilityService.$formControl(registerForm.get('fullName'))"
+        [required]="true"
       ></app-input>
     </div>
     <div class="my-3">
@@ -21,25 +22,31 @@
         placeholder="Enter your email"
         type="email"
         [control]="utilityService.$formControl(registerForm.get('email'))"
+        [required]="true"
       ></app-input>
     </div>
     <div class="my-3">
       <app-input
-        label="Email"
-        placeholder="Enter your email"
-        type="email"
-        [control]="utilityService.$formControl(registerForm.get('email'))"
+        label="Password"
+        placeholder="Enter your Password"
+        type="password"
+        [control]="utilityService.$formControl(registerForm.get('password'))"
+        [required]="true"
+        [isPasswordField]="true"
+        [tooltip]="'Password must contain at least 1 uppercase, 1 lowercase, 1 number, and 1 special character'"
       ></app-input>
     </div>
     <div class="my-3">
       <app-input
-        label="Email"
-        placeholder="Enter your email"
-        type="email"
-        [control]="utilityService.$formControl(registerForm.get('email'))"
+        label="Phone Number"
+        placeholder="Enter your Phone Number"
+        type="number"
+        [control]="utilityService.$formControl(registerForm.get('phoneNumber'))"
+        [required]="true"
+        [prefixText]="'+91'"
       ></app-input>
     </div>
     <button class="btn btn-primary mt-3">Register</button>
-    <p class="my-2 text-sm ">Alreay a User? <span class="text__primary fw-600" [routerLink]="['/', routes.home, routes.login]">Login</span></p>
+    <p class="my-2 text-sm">Already a User? <span class="text__primary fw-600 cursor-pointer" [routerLink]="['/', routes.home, routes.login]">Login</span></p>
   </div>
 </div>
